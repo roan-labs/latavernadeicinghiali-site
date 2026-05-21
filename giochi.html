@@ -35,9 +35,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .game-card {
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0;
   background: rgba(232,215,167,0.04);
   border: 1px solid rgba(176,138,63,0.3);
@@ -52,14 +53,24 @@
   transform: translateY(-4px);
   box-shadow: 0 14px 40px rgba(0,0,0,0.6);
 }
-.game-card .cover {
-  background-image: url('assets/games/crimson-desert.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 320px;
+.game-card .cover-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #0a0500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.game-card .cover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 .game-card .body {
-  padding: 2rem 2rem 2rem 2.5rem;
+  padding: 2.5rem 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,27 +78,29 @@
 .game-card .status-pill {
   display: inline-block;
   align-self: flex-start;
-  padding: 0.3rem 0.9rem;
+  padding: 0.35rem 1rem;
   background: var(--ember);
   color: var(--parchment);
   font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 .game-card h2 {
   font-family: 'Cinzel', serif;
   color: var(--candle-bright);
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   margin-bottom: 0.4rem;
   letter-spacing: 0.02em;
+  line-height: 1.05;
 }
 .game-card .meta {
   font-family: 'IM Fell English', serif;
   font-style: italic;
   color: var(--parchment-warm);
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
+  font-size: 1rem;
 }
 .game-card .desc {
   color: var(--parchment);
@@ -102,12 +115,17 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  border: 1px solid var(--gold);
+  transition: all 0.2s;
 }
+.game-card:hover .open-btn { background: var(--gold); color: var(--wood-dark); }
+
 .future-block {
   border: 1px dashed rgba(176,138,63,0.3);
   background: rgba(15,8,3,0.5);
   padding: 2.5rem 2rem;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   text-align: center;
 }
 .future-block h3 {
@@ -126,9 +144,8 @@
 }
 @media (max-width: 800px) {
   .game-card { grid-template-columns: 1fr; }
-  .game-card .cover { min-height: 240px; }
-  .game-card .body { padding: 1.5rem; }
-  .game-card h2 { font-size: 1.7rem; }
+  .game-card .body { padding: 1.7rem 1.5rem; }
+  .game-card h2 { font-size: 1.9rem; }
 }
 </style>
 </head>
@@ -161,12 +178,14 @@
   <p class="hero-sub">Quel che gira sul tavolo della taverna. Quando un gioco apre, ci si entra dentro e si rimane finche' c'e' da scoprire.</p>
 
   <a class="game-card" href="giochi/crimson-desert.html">
-    <div class="cover"></div>
+    <div class="cover-wrap">
+      <img src="assets/games/crimson-desert.jpg" alt="Crimson Desert — Re Kliff in armatura con due gatti">
+    </div>
     <div class="body">
       <span class="status-pill">In corso · Capitolo V</span>
       <h2>Crimson Desert</h2>
       <p class="meta">Pearl Abyss · Open World RPG · 2026</p>
-      <p class="desc">Il viaggio di Re Kliff per le terre di Pywel. Cinque capitoli alle spalle, dodici Cinghiali reclutati sulla Collina Ululante, tre Carronuvola in cortile, una Spada del Lord che non sa cosa sia il riposo. Dentro la pagina trovi la saga, la bio del Re, i Mantogrigio, l'equipaggiamento e le cronache di Pywel.</p>
+      <p class="desc">Il viaggio di Re Kliff per le terre di Pywel. Cinque capitoli alle spalle, dodici Cinghiali reclutati sulla Collina Ululante, tre Carronuvola in cortile, una Spada del Lord che non sa cosa sia il riposo.</p>
       <span class="open-btn">Entra nel diario di Re Kliff →</span>
     </div>
   </a>
