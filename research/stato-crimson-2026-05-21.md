@@ -1,7 +1,7 @@
 # Stato Re Kliff - 21 Maggio 2026
 
 > Snapshot raccolto dagli screenshot di Kevin (53 PNG + 1 panoramica accampamento) acquisiti il 21/05/2026 fra le 15:24 e le 15:45.
-> Protagonista: **Re Kliff** (Kliff Macduff), leader della fazione Greymane (in italiano: Mantegrigio).
+> Protagonista: **Re Kliff** (Kliff Macduff), leader della fazione Greymane (in italiano: Mantogrigio).
 
 ---
 
@@ -12,7 +12,7 @@
 - **Net worth liquido:** ~1.623 silver (2 lingotti d'oro + 623,53 argento — banca + inventario).
 - **Conoscenza totale gioco:** 21% (645 / 3074 voci).
 - **Regioni esplorate:** 48/110 (44%). Continenti scoperti: Hernand, Demeniss, Delesyia, Pailune, Crimson Desert (visibile in mappa).
-- **Fazioni con quest aperte:** 13+ (Mantegrigio, Casata Celeste, Casata Serkis, Casata Roberts, Casata Alfonso, Gilda Foglia d'Oro, Istituto della Petraschola, Custodi della Foresta di Pororin, Streghe, Hernand vita+politica, Demeniss vita+politica, Delesyia Marni+vita+missioni, Pailune Vigilante, Ordine di Antumbra).
+- **Fazioni con quest aperte:** 13+ (Mantogrigio, Casata Celeste, Casata Serkis, Casata Roberts, Casata Alfonso, Gilda Foglia d'Oro, Istituto della Petraschola, Custodi della Foresta di Pororin, Streghe, Hernand vita+politica, Demeniss vita+politica, Delesyia Marni+vita+missioni, Pailune Vigilante, Ordine di Antumbra).
 - **Compagni Greymane reclutati:** almeno 12 (tutti con incarico completato).
 - **Cavallo:** Herspia (Fiducia Liv. 5).
 - **Cavalcature speciali:** 3 Carronuvola (hot air balloon, una "della Via del cielo").
@@ -22,7 +22,7 @@
 
 ## Cosa Re Kliff ha fatto
 
-Quando Re Kliff è arrivato a Hernand, le ceneri del massacro dei Mantegrigio erano ancora calde. Gli Orsi Neri avevano steso il vecchio capo, sparpagliato i sopravvissuti, e lasciato un nome — Greymane — buono solo per scolpirlo sulle lapidi.
+Quando Re Kliff è arrivato a Hernand, le ceneri del massacro dei Mantogrigio erano ancora calde. Gli Orsi Neri avevano steso il vecchio capo, sparpagliato i sopravvissuti, e lasciato un nome — Greymane — buono solo per scolpirlo sulle lapidi.
 
 Kliff ha deciso di farne un'insegna. Ha rimesso in piedi l'accampamento sulla **Collina Ululante**, ha richiamato uno a uno i cinghiali superstiti (Carl, Ronald, Ben, Tristan, Brice, Wynstan, Conrad, Alec, Devan, Evelyn, Pierre — tutti con incarico chiuso), e ha trasformato un rudere in un crocevia con tanto di carronuvola che oggi galleggia sopra la valle come un occhio blu e oro.
 
@@ -38,7 +38,7 @@ Stasera dorme sulla Collina Ululante. Domani lo aspetta un nido di Arpie.
 
 - **Chiudere il Capitolo V "L'intruso":** ultima tappa "Alla volta del nido" — restano due fuorilegge di Hernand (Salvatore, e uno fra Jeffrey/Simon de Monport/Alessio/Blix).
 - **Aprire il Capitolo VI** (non ancora in diario).
-- **Mantegrigio "La terra dell'alba":** chiudere "Volontà raccolta" 9/10 (manca "Richiesta di Ben") e "Ricongiungimento con i compagni".
+- **Mantogrigio "La terra dell'alba":** chiudere "Volontà raccolta" 9/10 (manca "Richiesta di Ben") e "Ricongiungimento con i compagni".
 - **Casata Serkis:** completare "Nobile tra le rovine" (Il sentiero distrutto).
 - **Casata Roberts:** "Un masso dal cielo" (A corto di personale).
 - **Casata Alfonso:** intera linea "Casa delle lance".
@@ -72,7 +72,7 @@ Sotto-trama Capitolo V completate: "Ospite senza invito" 4/4, "Bianco e nero" 5/
 
 | Fazione | Status | Quest aperte |
 |---------|--------|--------------|
-| Mantegrigio (Greymane) | Hub | "La terra dell'alba" 7/7 + 9/10; Famiglie disperse 5/5; Incarichi 12/12 |
+| Mantogrigio (Greymane) | Hub | "La terra dell'alba" 7/7 + 9/10; Famiglie disperse 5/5; Incarichi 12/12 |
 | Casata Celeste (Hernand) | Attiva | Fuorilegge 7/9 |
 | Casata Serkis | Attiva | 1/1 + 0/2 |
 | Casata Roberts | Attiva | 5/5 + 4/4 + 0/1 |
@@ -170,7 +170,7 @@ Mappa: 48/110 regioni note (44%).
 3. **`Immagine 2026-05-21 153146.png`** — Spada del Lord nel pannello equipaggiamento. Usabile per **entry "l'arma di Re Kliff"**.
 4. **`Immagine 2026-05-21 153044.png`** — Pannello completo Kliff con Armatura di Bolton equipaggiata. Per **scheda PG sulla pagina Crimson**.
 5. **`Immagine 2026-05-21 153234.png`** — I 3 Carronuvola. Curioso e iconico per **entry sui mezzi di trasporto**.
-6. **`Immagine 2026-05-21 153746.png`** — Schermata "Racconti dei Mantegrigio" con tutti i compagni reclutati. Per **entry "i cinghiali della taverna"** (link tematico col nome del canale Twitch).
+6. **`Immagine 2026-05-21 153746.png`** — Schermata "Racconti dei Mantogrigio" con tutti i compagni reclutati. Per **entry "i cinghiali della taverna"** (link tematico col nome del canale Twitch).
 7. **`Immagine 2026-05-21 153815.png`** — Casata Celeste, fuorilegge ricercati 7/9. Per **entry "il cacciatore di taglie"**.
 8. **`Immagine 2026-05-21 154446.png`** — Banca con 1000 silver depositati. Per **entry economia / "il tesoro di Re Kliff"**.
 9. **`Immagine 2026-05-21 153436.png`** — Mappa Demeniss/Delesyia/Mount Rein. Per **entry esplorazione**.
@@ -182,7 +182,7 @@ Mappa: 48/110 regioni note (44%).
 
 - **Nome "La Taverna dei Cinghiali" + lista compagni Greymane** = combo perfetta. Ogni reclutato è letteralmente un "cinghiale" della taverna; gli incarichi (Carl, Ronald, Brice, Conrad, Wynstan, Alec, Devan, Evelyn, Pierre…) sono già storyline narrative gratuite per il sito.
 - **"Bolton Plate":** wiki conferma che è l'armatura delle élite di Hernand, comprabile col contribution token a Hernand Castle. Re Kliff è quindi un "cavaliere onorario" della casa Bolton — narrativa di pregio per il diario.
-- Localizzazione italiana ufficiale: **Greymanes → Mantegrigio**, **Howling Hill → Collina Ululante**, **Goldgreed → Avidità dorata**. Coerenza utile per gli articoli sul sito.
+- Localizzazione italiana ufficiale: **Greymanes → Mantogrigio**, **Howling Hill → Collina Ululante**, **Goldgreed → Avidità dorata**. Coerenza utile per gli articoli sul sito.
 - **Profilo di investimento "Proattivo"** in banca: il gioco ha un mercato che aggiorna ogni ora — Re Kliff è già un investitore.
 - **Net worth modesto (1.623 silver)**: coerente con un Capitolo V appena imboccato. C'è spazio narrativo per un "diario delle finanze" che cresce.
 - Lo **Scudo dei Tardik** mostra il bonus "Efficienza difensiva +5" — i Tardik sono una fazione minore di Pailune secondo i wiki, dettaglio che si può sfruttare per teaser.

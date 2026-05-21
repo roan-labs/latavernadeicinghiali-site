@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipaggiamento di Re Kliff · La Taverna dei Cinghiali</title>
+<meta name="description" content="Cosa porta addosso Re Kliff. Spada del Lord, Arco del Lupo Grigio, armatura di Bolton, scudo dei Tardik.">
+
+<meta property="og:title" content="Equipaggiamento di Re Kliff · Crimson Desert">
+<meta property="og:description" content="Spada del Lord, Arco del Lupo Grigio, armatura di Bolton. Click sugli slot per i dettagli.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/scheda-pg.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🐗&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.equip-page main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+.equip-page h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold-bright);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.equip-page .breadcrumb {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 3rem;
+}
+.equip-page .breadcrumb a { color: var(--candle-bright); text-decoration: none; }
+.equip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.slot {
+  cursor: pointer;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(232, 215, 167, 0.06), rgba(212, 168, 90, 0.03));
+  border: 1px solid rgba(176, 138, 63, 0.3);
+  border-radius: 2px;
+  transition: all 0.25s;
+  text-align: center;
+}
+.slot:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-bright);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.slot-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.slot-label {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.slot-name {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-bright);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.slot-stat {
+  font-size: 0.9rem;
+  color: var(--parchment);
+}
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+.modal-bg.open { display: flex; }
+.modal {
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--wood-dark);
+  border: 2px solid var(--gold);
+  border-radius: 2px;
+  padding: 2rem;
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(245, 185, 82, 0.15);
+  border: 1px solid var(--gold);
+  color: var(--parchment);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+}
+.modal-close:hover { background: rgba(245, 185, 82, 0.3); }
+.modal h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.modal .tier {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 1.5rem;
+}
+.modal .screen-shot {
+  margin: 1.5rem 0;
+  border: 1px solid rgba(176, 138, 63, 0.2);
+}
+.modal .screen-shot img { width: 100%; display: block; }
+.modal .stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.5rem;
+}
+.modal .stat-card {
+  background: rgba(232, 215, 167, 0.05);
+  padding: 0.8rem;
+  border: 1px solid rgba(176, 138, 63, 0.2);
+  text-align: center;
+}
+.modal .stat-card .v {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--candle-bright);
+  display: block;
+}
+.modal .stat-card .l {
+  font-size: 0.8rem;
+  color: var(--parchment-warm);
+  font-style: italic;
+}
+.modal .note {
+  font-style: italic;
+  color: var(--parchment-warm);
+  padding: 1rem;
+  background: rgba(15, 8, 3, 0.5);
+  border-left: 3px solid var(--gold);
+}
+.stat-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.stat-summary .ss-tile {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(232, 215, 167, 0.04);
+  border: 1px solid rgba(176, 138, 63, 0.2);
+}
+.stat-summary .ss-tile .v {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: var(--gold-bright);
+  display: block;
+}
+.stat-summary .ss-tile .l {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--parchment-warm);
+}
+</style>
+</head>
+<body class="inner-page equip-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="/" class="brand">
+    <span class="brand-mark">🍖</span>
+    <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="/la-taverna.html">La Taverna</a>
+    <a href="/giochi.html">I Giochi</a>
+    <a href="/diario.html">Il Diario</a>
+    <a href="/roan.html">Roan</a>
+    <a href="/schedule.html">Quando</a>
+  </nav>
+  <div class="status" id="live-status">
+    <span class="dot offline"></span>
+    <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<main>
+  <h1>Equipaggiamento di Re Kliff</h1>
+  <p class="breadcrumb"><a href="/giochi.html">I Giochi</a> · <a href="crimson-desert.html">Crimson Desert</a> · Pannello equipaggiamento</p>
+
+  <p style="text-align:center;max-width:700px;margin:0 auto 2rem;color:var(--parchment-warm);font-style:italic;">
+    Cosa porta addosso Re Kliff in questo momento. Click su uno slot per dettagli, stat e screenshot. Le note sono di Roan, le opinioni anche.
+  </p>
+
+  <div class="stat-summary">
+    <div class="ss-tile"><span class="v">525</span><span class="l">Salute</span></div>
+    <div class="ss-tile"><span class="v">220</span><span class="l">Energia</span></div>
+    <div class="ss-tile"><span class="v">50</span><span class="l">Spirito</span></div>
+    <div class="ss-tile"><span class="v">30</span><span class="l">Difesa</span></div>
+    <div class="ss-tile"><span class="v">L3</span><span class="l">Vel. movimento</span></div>
+    <div class="ss-tile"><span class="v">L3</span><span class="l">Res. fuoco</span></div>
+  </div>
+
+  <div class="equip-grid">
+
+    <div class="slot" data-slot="1h">
+      <span class="slot-icon">🗡️</span>
+      <span class="slot-label">Arma a una mano</span>
+      <span class="slot-name">Spada del Lord</span>
+      <span class="slot-stat">Atk 15 · 100/100 affil.</span>
+    </div>
+
+    <div class="slot" data-slot="2h">
+      <span class="slot-icon">⚔️</span>
+      <span class="slot-label">Arma a due mani</span>
+      <span class="slot-name">Spada di Rugiadaquieta</span>
+      <span class="slot-stat">Atk 20 · Vel. L3</span>
+    </div>
+
+    <div class="slot" data-slot="bow">
+      <span class="slot-icon">🏹</span>
+      <span class="slot-label">Arco</span>
+      <span class="slot-name">Arco del Lupo Grigio</span>
+      <span class="slot-stat">Atk 10 · Key item</span>
+    </div>
+
+    <div class="slot" data-slot="shield">
+      <span class="slot-icon">🛡️</span>
+      <span class="slot-label">Scudo</span>
+      <span class="slot-name">Scudo dei Tardik</span>
+      <span class="slot-stat">Dif 6 · +5 eff. difensiva</span>
+    </div>
+
+    <div class="slot" data-slot="chest">
+      <span class="slot-icon">🥋</span>
+      <span class="slot-label">Petto</span>
+      <span class="slot-name">Armatura a piastre di Bolton</span>
+      <span class="slot-stat">Dif 8 · 7 Contribution Token</span>
+    </div>
+
+    <div class="slot" data-slot="cape">
+      <span class="slot-icon">🧥</span>
+      <span class="slot-label">Mantello</span>
+      <span class="slot-name">Mantello a piastre di Bolton</span>
+      <span class="slot-stat">Dif 8 · Energia -2%</span>
+    </div>
+
+    <div class="slot" data-slot="gloves">
+      <span class="slot-icon">🧤</span>
+      <span class="slot-label">Guanti</span>
+      <span class="slot-name">Guanti a piastre di Canta</span>
+      <span class="slot-stat">Atk 15 · Dif 4</span>
+    </div>
+
+    <div class="slot" data-slot="boots">
+      <span class="slot-icon">🥾</span>
+      <span class="slot-label">Stivali</span>
+      <span class="slot-name">Stivali a piastre di Canta</span>
+      <span class="slot-stat">Atk 13 · Dif 5</span>
+    </div>
+
+  </div>
+</main>
+
+<div class="modal-bg" id="modalbg">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>La Taverna</h4>
+      <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+    </div>
+    <div>
+      <h4>Dove trovarci</h4>
+      <ul>
+        <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank">Twitch</a></li>
+        <li><a href="#" target="_blank">Discord</a></li>
+        <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Il custode AI</h4>
+      <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="/roan.html">Scopri chi e'</a>.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+const equipData = {
+  '1h': {
+    name: 'Spada del Lord',
+    tier: 'Arma a una mano · titolo nobiliare',
+    stats: [
+      {v: '15', l: 'Attacco'},
+      {v: 'L2', l: 'Velocità'},
+      {v: '100/100', l: 'Affilatura'},
+      {v: '+2', l: 'Attacco extra'}
+    ],
+    note: 'Bonus speciale: "Fendente del vento". Mantiene il filo perfetto al 100 su 100 — Kliff la cura come si cura un cane affezionato.',
+    screen: '../assets/games/crimson-screens/spada-del-lord.png'
+  },
+  '2h': {
+    name: 'Spada a due mani di Rugiadaquieta',
+    tier: 'Arma a due mani · pesi pesanti',
+    stats: [
+      {v: '20', l: 'Attacco'},
+      {v: 'L3', l: 'Velocità'}
+    ],
+    note: 'Per quando un singolo fendente deve risolvere il problema. Pesante, lenta a tirar fuori, ma quando arriva chiude la pratica. Rugiadaquieta non è il nome dell\'oste che l\'ha forgiata, ma poteva esserlo.',
+    screen: null
+  },
+  'bow': {
+    name: 'Arco del Lupo Grigio',
+    tier: 'Arco · key item iniziale',
+    stats: [
+      {v: '10', l: 'Attacco'},
+      {v: 'L1', l: 'Velocità'},
+      {v: '49/50', l: 'Affilatura'},
+      {v: '+2', l: 'Attacco extra'}
+    ],
+    note: 'L\'arco di partenza, mai vendibile, mai abbandonato. È stato con Kliff dal primo giorno e ci sarà nell\'ultimo. Onorato come un mobile di famiglia.',
+    screen: null
+  },
+  'shield': {
+    name: 'Scudo dei Tardik',
+    tier: 'Scudo · porta sempre con sé',
+    stats: [
+      {v: '6', l: 'Difesa'},
+      {v: 'L2', l: 'Velocità'},
+      {v: '50/50', l: 'Affilatura'},
+      {v: '+5', l: 'Efficienza difensiva'}
+    ],
+    note: 'Lo scudo dei Tardik. Va e viene con la spada. Quando Kliff si trova in mezzo a cinque guardie incazzate, è quello che gli salva il collo.',
+    screen: null
+  },
+  'chest': {
+    name: 'Armatura a piastre di Bolton',
+    tier: 'Petto · acquisto al Castello di Hernand',
+    stats: [
+      {v: '8', l: 'Difesa'},
+      {v: '7', l: 'Contribution Token'}
+    ],
+    note: 'Comprata al Castello di Hernand con sette Contribution Token. È un set di chi ha pagato la quota di iscrizione al regno. Quando Kliff la indossa, i nobili sanno che ha già speso.',
+    screen: '../assets/games/crimson-screens/scheda-pg.png'
+  },
+  'cape': {
+    name: 'Mantello a piastre di Bolton',
+    tier: 'Mantello · riservato ai contributori di Hernand',
+    stats: [
+      {v: '8', l: 'Difesa'},
+      {v: 'L3', l: 'Res. fuoco'},
+      {v: '-2%', l: 'Consumo energia'}
+    ],
+    note: 'Coordinato col petto. Riservato a chi ha messo mano al portafoglio per Hernand. Funziona anche per nascondere il fatto che Kliff ha le tasche piene di lingotti rubati altrove.',
+    screen: null
+  },
+  'gloves': {
+    name: 'Guanti a piastre di Canta',
+    tier: 'Guanti · set Canta House',
+    stats: [
+      {v: '15', l: 'Attacco'},
+      {v: '4', l: 'Difesa'}
+    ],
+    note: 'Da Canta. Buoni guanti, danno bonus attacco serio per essere solo guanti. Kliff ne è particolarmente affezionato perché ci si grattano i gatti.',
+    screen: null
+  },
+  'boots': {
+    name: 'Stivali a piastre di Canta',
+    tier: 'Stivali · set Canta House',
+    stats: [
+      {v: '13', l: 'Attacco'},
+      {v: '5', l: 'Difesa'}
+    ],
+    note: 'Stivali della stessa casa dei guanti. Niente fa più rumore di un re che cammina sulle assi di una taverna con questi.',
+    screen: null
+  }
+};
+
+const modalBg = document.getElementById('modalbg');
+const modalContent = document.getElementById('modal-content');
+
+document.querySelectorAll('.slot').forEach(slot => {
+  slot.addEventListener('click', () => {
+    const key = slot.dataset.slot;
+    const d = equipData[key];
+    let html = '';
+    html += '<h2>' + d.name + '</h2>';
+    html += '<div class="tier">' + d.tier + '</div>';
+    if (d.screen) {
+      html += '<div class="screen-shot"><img src="' + d.screen + '" alt="' + d.name + '"></div>';
+    }
+    html += '<div class="stats-row">';
+    d.stats.forEach(s => {
+      html += '<div class="stat-card"><span class="v">' + s.v + '</span><span class="l">' + s.l + '</span></div>';
+    });
+    html += '</div>';
+    html += '<div class="note">' + d.note + '</div>';
+    modalContent.innerHTML = html;
+    modalBg.classList.add('open');
+  });
+});
+
+function closeModal() {
+  modalBg.classList.remove('open');
+}
+modalBg.addEventListener('click', (e) => {
+  if (e.target === modalBg) closeModal();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+</body>
+</html>
