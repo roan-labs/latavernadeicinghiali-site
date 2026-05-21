@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crimson Desert · La Taverna dei Cinghiali</title>
+<meta name="description" content="Il diario di Re Kliff a Pywel. Sessioni Crimson Desert in italiano.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Crimson Desert · La Taverna dei Cinghiali">
+<meta property="og:description" content="Il viaggio di Re Kliff a Pywel. Sequestratore di gatti, terrore delle staccionate, aspirante Spiderman.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-desert.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roan-labs.github.io/latavernadeicinghiali-site/giochi/crimson-desert.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.game-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+.game-hero .bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/games/crimson-desert.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.55) contrast(1.05);
+  z-index: -1;
+}
+.game-hero .bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 8, 3, 0.95) 0%, rgba(15, 8, 3, 0.3) 50%, transparent 100%);
+}
+.game-hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  color: var(--candle-bright);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin: 0;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.game-hero .meta {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.game-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+  text-align: center;
+}
+.game-intro p {
+  font-size: 1.15rem;
+  color: var(--parchment);
+}
+.diario-header {
+  max-width: 900px;
+  margin: 3rem auto 2rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+.diario-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.3rem;
+  color: var(--gold-bright);
+  margin-bottom: 0.5rem;
+}
+.diario-list {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.tag {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  background: rgba(176, 138, 63, 0.15);
+  border: 1px solid rgba(176, 138, 63, 0.4);
+  color: var(--parchment-warm);
+  font-family: 'IM Fell English', serif;
+  font-size: 0.85rem;
+  border-radius: 2px;
+}
+@media (max-width: 800px) {
+  .game-hero h1 { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body class="inner-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="/" class="brand">
+    <span class="brand-mark">🍖</span>
+    <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="/la-taverna.html">La Taverna</a>
+    <a href="/giochi.html">I Giochi</a>
+    <a href="/diario.html">Il Diario</a>
+    <a href="/roan.html">Roan</a>
+    <a href="/schedule.html">Quando</a>
+  </nav>
+  <div class="status" id="live-status">
+    <span class="dot offline"></span>
+    <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<section class="game-hero">
+  <div class="bg"></div>
+  <div>
+    <h1>Crimson Desert</h1>
+    <p class="meta">Pearl Abyss · Open World RPG · IN CORSO</p>
+  </div>
+</section>
+
+<section class="game-intro">
+  <p>Re Kliff regna a Pywel. Almeno, lui dice di regnare. <strong>Terrore delle staccionate</strong>, sequestratore di gatti teneri, aspirante Spiderman dei campanili, combattente "imprevedibile" che vince le boss fight a botte di vino. Il manuale di combattimento di Re Kliff ha due regole: <em>uno, vinci. Due, non c'è regola due.</em></p>
+  <p>In questa pagina trovi il diario di tutte le sessioni Crimson Desert. Aggiornato da Roan.</p>
+</section>
+
+<section class="diario-header">
+  <h2>Cronache di Pywel</h2>
+  <p class="hero-sub">Le sessioni live, in ordine cronologico inverso.</p>
+</section>
+
+<section class="diario-list">
+
+  <div class="diary-entry">
+    <div class="date">PROSSIMAMENTE · CAPITOLO 0</div>
+    <h2>L'apertura della Taverna</h2>
+    <p>La prima sessione live di Crimson Desert arriva quando la taverna apre ufficialmente. Roan terra' qui il diario: cosa abbiamo fatto, quali quest sono cadute, chi tra i Cinghiali e' arrivato per primo.</p>
+    <p>Aspetta l'annuncio su Discord e su Twitch per la data esatta della prima apertura.</p>
+    <div class="tag-list">
+      <span class="tag">In arrivo</span>
+      <span class="tag">Crimson Desert</span>
+      <span class="tag">Capitolo 0</span>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>La Taverna</h4>
+      <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+    </div>
+    <div>
+      <h4>Dove trovarci</h4>
+      <ul>
+        <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank">Twitch</a></li>
+        <li><a href="#" target="_blank">Discord</a></li>
+        <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Il custode AI</h4>
+      <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="/roan.html">Scopri chi e'</a>.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
