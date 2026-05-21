@@ -4,24 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crimson Desert · La Taverna dei Cinghiali</title>
-<meta name="description" content="Il diario di Re Kliff a Pywel. Capitolo V in corso, 12 Cinghiali reclutati, 3 mongolfiere sopra Mantogrigio.">
+<meta name="description" content="Il diario di Re Kliff a Pywel. Capitolo V al 90%, 12 Cinghiali reclutati, 3 Carronuvola sopra Mantogrigio.">
 
 <meta property="og:title" content="Crimson Desert · La Taverna dei Cinghiali">
-<meta property="og:description" content="Capitolo V al 90%. 12 Cinghiali reclutati. 3 Carronuvola sopra la Collina Ululante. Il viaggio di Re Kliff per Pywel.">
-<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/accampamento.png">
+<meta property="og:description" content="Capitolo V al 90%. 12 Cinghiali reclutati. 3 Carronuvola sopra la Collina Ululante. La saga di Re Kliff.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-desert.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://roan-labs.github.io/latavernadeicinghiali-site/giochi/crimson-desert.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;&lt;/text&gt;&lt;/svg&gt;">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' fill='%230f0803'/&gt;&lt;text x='50%' y='62%' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23f5b952'&gt;T&lt;/text&gt;&lt;/svg&gt;">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
 .game-hero {
   position: relative;
-  height: 70vh;
-  min-height: 460px;
+  height: 60vh;
+  min-height: 420px;
   display: flex;
   align-items: flex-end;
   padding: 4rem 2rem;
@@ -31,7 +31,7 @@
 .game-hero .bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/games/crimson-screens/accampamento.png');
+  background-image: url('../assets/games/crimson-desert.jpg');
   background-size: cover;
   background-position: center;
   filter: brightness(0.7) contrast(1.05);
@@ -43,18 +43,19 @@
   inset: 0;
   background: linear-gradient(to top, rgba(15, 8, 3, 0.96) 0%, rgba(15, 8, 3, 0.4) 50%, transparent 100%);
 }
+.game-hero .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
 .game-hero h1 {
   font-family: 'Cinzel', serif;
-  font-size: 4.5rem;
+  font-size: 4rem;
   color: var(--candle-bright);
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
   font-weight: 900;
   letter-spacing: 0.05em;
   margin: 0;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
 }
 .game-hero .meta {
   font-family: 'IM Fell English', serif;
@@ -62,27 +63,47 @@
   color: var(--parchment-warm);
   font-size: 1.15rem;
   margin-top: 0.5rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
 }
+.submenu-bar {
+  background: rgba(20,10,4,0.92);
+  border-top: 1px solid rgba(176,138,63,0.25);
+  border-bottom: 1px solid rgba(176,138,63,0.25);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.submenu-bar nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.submenu-bar nav a {
+  color: var(--parchment-warm);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-right: 1px solid rgba(176,138,63,0.2);
+  transition: color 0.2s;
+}
+.submenu-bar nav a:last-child { border-right: none; }
+.submenu-bar nav a:hover { color: var(--candle-bright); }
+.submenu-bar nav a.active { color: var(--gold-bright); }
+
 .intro-strip {
   background: rgba(15, 8, 3, 0.95);
-  padding: 3rem 2rem;
+  padding: 4rem 2rem;
   border-bottom: 1px solid rgba(176, 138, 63, 0.2);
 }
-.intro-strip .container {
-  max-width: 900px;
-}
-.intro-strip p {
-  font-size: 1.18rem;
-  color: var(--parchment);
-  margin-bottom: 1rem;
-}
-.intro-strip p:last-child {
-  margin-bottom: 0;
-}
+.intro-strip .container { max-width: 900px; margin: 0 auto; }
+.intro-strip p { font-size: 1.18rem; color: var(--parchment); margin-bottom: 1rem; line-height: 1.7; }
+.intro-strip p:last-child { margin-bottom: 0; }
 
 .stat-bar {
   background: rgba(20, 10, 4, 0.7);
@@ -116,78 +137,58 @@
   font-size: 0.95rem;
   color: var(--parchment-warm);
 }
-.deep-link-bar {
-  padding: 3rem 2rem;
+
+.sections-grid-bar {
+  padding: 4rem 2rem;
   background: linear-gradient(to bottom, rgba(15, 8, 3, 0.7), rgba(20, 10, 4, 0.95));
 }
-.deep-link-grid {
+.sections-grid {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
-.deep-link {
+.section-link {
   display: block;
-  padding: 1.8rem 1.5rem;
+  padding: 2rem 1.7rem;
   background: rgba(232, 215, 167, 0.04);
   border: 1px solid rgba(176, 138, 63, 0.3);
-  border-radius: 2px;
   text-decoration: none;
   color: var(--parchment);
   transition: all 0.25s;
 }
-.deep-link:hover {
+.section-link:hover {
   border-color: var(--gold-bright);
   background: rgba(232, 215, 167, 0.08);
   transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-.deep-link h3 {
+.section-link h3 {
   font-family: 'Cinzel', serif;
   color: var(--gold-bright);
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
 }
-.deep-link p {
+.section-link p {
   font-size: 0.95rem;
   color: var(--parchment-warm);
-  margin-bottom: 0;
+  margin: 0;
+  line-height: 1.5;
 }
-.diario-header {
-  max-width: 900px;
-  margin: 3rem auto 2rem;
-  padding: 0 2rem;
-  text-align: center;
-}
-.diario-header h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 2.3rem;
-  color: var(--gold-bright);
-  margin-bottom: 0.5rem;
-}
-.diario-list {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem 4rem;
-}
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.section-link .arrow {
+  display: block;
   margin-top: 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: var(--candle-bright);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
-.tag {
-  display: inline-block;
-  padding: 0.25rem 0.7rem;
-  background: rgba(176, 138, 63, 0.15);
-  border: 1px solid rgba(176, 138, 63, 0.4);
-  color: var(--parchment-warm);
-  font-family: 'IM Fell English', serif;
-  font-size: 0.85rem;
-  border-radius: 2px;
-}
+
 @media (max-width: 800px) {
   .game-hero h1 { font-size: 2.5rem; }
+  .game-hero { height: 50vh; min-height: 320px; }
 }
 </style>
 </head>
@@ -205,8 +206,7 @@
   </a>
   <nav>
     <a href="../la-taverna.html">La Taverna</a>
-    <a href="crimson-desert.html">Crimson Desert</a>
-    <a href="situazione.html">Cronache di Pywel</a>
+    <a href="../giochi.html">Giochi</a>
     <a href="../schedule.html">Quando</a>
     <a href="../roan.html">Roan</a>
   </nav>
@@ -218,103 +218,68 @@
 
 <section class="game-hero">
   <div class="bg"></div>
-  <div>
-  <h1>Crimson Desert</h1>
-  <p class="meta">Pearl Abyss · Open World RPG · CAPITOLO V — "L'INTRUSO"</p>
+  <div class="inner">
+    <h1>Crimson Desert</h1>
+    <p class="meta">Pearl Abyss · Open World RPG · CAPITOLO V — "L'INTRUSO"</p>
   </div>
+</section>
+
+<section class="submenu-bar">
+  <nav>
+    <a class="active" href="crimson-desert.html">La saga</a>
+    <a href="personaggio.html">Chi e' Re Kliff</a>
+    <a href="mantogrigio.html">I Mantogrigio</a>
+    <a href="equipaggiamento.html">Equipaggiamento</a>
+    <a href="situazione.html">Cronache di Pywel</a>
+  </nav>
 </section>
 
 <section class="intro-strip">
   <div class="container">
-  <p><strong>Re Kliff regna a Pywel.</strong> Almeno, lui dice di regnare. Quando è arrivato a Hernand, l'accampamento dei Mantogrigio era una pira spenta e un nome buono solo per le lapidi. Lui se l'è preso come insegna, ha rimesso in piedi la baracca sulla <strong>Collina Ululante</strong>, ha richiamato 12 cinghiali superstiti uno a uno, e oggi ci galleggia sopra una mongolfiera blu e oro come se fosse sempre stata lì.</p>
-
-  <p>Cinque capitoli alle spalle. Tre Carronuvola nel cortile. Sette fuorilegge stesi sul libro mastro della Casata Celeste. Una Spada del Lord affilata cento su cento, l'Arco del Lupo Grigio sulla schiena, e la cavalla Herspia che gli vuole bene a Livello 5. Stasera dorme sulla Collina Ululante. Domani lo aspetta un nido di Arpie.</p>
+    <p><strong>Re Kliff regna a Pywel.</strong> Almeno, lui dice di regnare. Quando e' arrivato a Hernand, l'accampamento dei Mantogrigio era una pira spenta e un nome buono solo per le lapidi. Lui se l'e' preso come insegna, ha rimesso in piedi la baracca sulla <strong>Collina Ululante</strong>, ha richiamato 12 cinghiali superstiti uno a uno, e oggi ci galleggia sopra una mongolfiera blu e oro come se fosse sempre stata li'.</p>
+    <p>Cinque capitoli alle spalle. Tre Carronuvola nel cortile. Sette fuorilegge stesi sul libro mastro della Casata Celeste. Una Spada del Lord affilata cento su cento, l'Arco del Lupo Grigio sulla schiena, e la cavalla Herspia che gli vuole bene a Livello 5. Stasera dorme sulla Collina Ululante. Domani lo aspetta un nido di Arpie.</p>
   </div>
 </section>
 
 <section class="stat-bar">
   <div class="stat-grid">
-  <div class="stat-tile"><span class="num">V</span><span class="lbl">capitolo in corso</span></div>
-  <div class="stat-tile"><span class="num">12</span><span class="lbl">Cinghiali reclutati</span></div>
-  <div class="stat-tile"><span class="num">3</span><span class="lbl">Carronuvola</span></div>
-  <div class="stat-tile"><span class="num">1.623</span><span class="lbl">silver liquidi</span></div>
-  <div class="stat-tile"><span class="num">48/110</span><span class="lbl">regioni scoperte</span></div>
-  <div class="stat-tile"><span class="num">21%</span><span class="lbl">conoscenza totale</span></div>
+    <div class="stat-tile"><span class="num">V</span><span class="lbl">capitolo in corso</span></div>
+    <div class="stat-tile"><span class="num">12</span><span class="lbl">Cinghiali reclutati</span></div>
+    <div class="stat-tile"><span class="num">3</span><span class="lbl">Carronuvola</span></div>
+    <div class="stat-tile"><span class="num">1.623</span><span class="lbl">silver liquidi</span></div>
+    <div class="stat-tile"><span class="num">48/110</span><span class="lbl">regioni scoperte</span></div>
+    <div class="stat-tile"><span class="num">21%</span><span class="lbl">conoscenza totale</span></div>
   </div>
 </section>
 
-<section class="deep-link-bar">
-  <div class="deep-link-grid">
-  <a class="deep-link" href="situazione.html">
-  <h3>Cronache di Pywel</h3>
-  <p>Stato completo del Re Kliff: capitoli, fazioni, mappa, knowledge, denaro, todo.</p>
-  </a>
-  <a class="deep-link" href="equipaggiamento.html">
-  <h3>Equipaggiamento</h3>
-  <p>Spade, arco, armatura, scudo. Cosa porta addosso Re Kliff. Click per i dettagli.</p>
-  </a>
-  <a class="deep-link" href="#cronache">
-  <h3>Capitolo Zero</h3>
-  <p>Il prologo prima della prima live. Cosa e' successo finora, da dove ripartiamo.</p>
-  </a>
-  </div>
-</section>
+<section class="sections-grid-bar">
+  <div class="sections-grid">
 
-<section class="diario-header" id="cronache">
-  <h2>Capitolo Zero — il prologo</h2>
-  <p class="hero-sub">Tutto quel che e' successo prima della prima sessione live.</p>
-</section>
+    <a class="section-link" href="personaggio.html">
+      <h3>Chi e' Re Kliff</h3>
+      <p>La biografia non ufficiale del re autoproclamato: stats, manie, gatti sequestrati, profilo di investimento Proattivo.</p>
+      <span class="arrow">Leggi la bio →</span>
+    </a>
 
-<section class="diario-list">
+    <a class="section-link" href="mantogrigio.html">
+      <h3>I Mantogrigio</h3>
+      <p>La fazione Greymane, l'accampamento sulla Collina Ululante e i 12 Cinghiali superstiti con incarico chiuso.</p>
+      <span class="arrow">Conosci i Cinghiali →</span>
+    </a>
 
-  <div class="diary-entry">
-  <div class="date">I CINQUE CAPITOLI CHIUSI</div>
-  <h2>Da Hernand alla Collina Ululante</h2>
-  <p style="margin-bottom:1rem;">Quando Re Kliff e' arrivato a Hernand, l'accampamento dei Mantogrigio era una pira spenta. Gli Orsi Neri avevano steso il vecchio capo e lasciato la fazione Greymane senza nome e senza tetto. Kliff ha attraversato cinque capitoli per ricucire la storia:</p>
-  <ul style="list-style:none;padding-left:0;margin-bottom:1rem;">
-    <li style="padding:0.6rem 0;border-bottom:1px dashed rgba(176,138,63,0.2);"><strong style="color:var(--gold-bright);">Prologo — Nel cuore della notte.</strong> <span style="color:var(--parchment-warm);">L'imboscata. Kliff sopravvive. L'Arco del Lupo Grigio entra in tasca e non esce piu'.</span></li>
-    <li style="padding:0.6rem 0;border-bottom:1px dashed rgba(176,138,63,0.2);"><strong style="color:var(--gold-bright);">I — Primo incontro.</strong> <span style="color:var(--parchment-warm);">Il primo dei compagni rintraccia Kliff. La voce gira.</span></li>
-    <li style="padding:0.6rem 0;border-bottom:1px dashed rgba(176,138,63,0.2);"><strong style="color:var(--gold-bright);">II — Avidita' dorata.</strong> <span style="color:var(--parchment-warm);">Primo lingotto, primo nemico ufficiale.</span></li>
-    <li style="padding:0.6rem 0;border-bottom:1px dashed rgba(176,138,63,0.2);"><strong style="color:var(--gold-bright);">III — Collina ululante.</strong> <span style="color:var(--parchment-warm);">L'accampamento torna in piedi. Il nome Greymane riprende fiato.</span></li>
-    <li style="padding:0.6rem 0;"><strong style="color:var(--gold-bright);">IV — Il prezzo della conoscenza.</strong> <span style="color:var(--parchment-warm);">Petraschola 5/5: concentrazione, Flusso dell'Abisso, macchinario gravitazionale, radice celeste, Abisso antico.</span></li>
-  </ul>
-  <div class="tag-list">
-    <span class="tag">Capitoli 0-IV</span>
-    <span class="tag">Greymane</span>
-    <span class="tag">Petraschola</span>
-  </div>
-  </div>
+    <a class="section-link" href="equipaggiamento.html">
+      <h3>Equipaggiamento</h3>
+      <p>Spada del Lord, Arco del Lupo Grigio, Armatura di Bolton, Scudo dei Tardik. Click su ogni slot per i dettagli.</p>
+      <span class="arrow">Apri il pannello →</span>
+    </a>
 
-  <div class="diary-entry">
-  <div class="date">DOVE SIAMO ADESSO</div>
-  <h2>Capitolo V — L'intruso, al 90%</h2>
-  <p>Restano due fuorilegge di Hernand sul libro mastro (Salvatore + uno fra Jeffrey, Simon de Monport, Alessio, Blix) e poi <strong>"Alla volta del nido"</strong>: un nido di Arpie a Pailune chiude il capitolo. Sotto-trame del V gia' chiuse: "Ospite senza invito" 4/4, "Bianco e nero" 5/5, "Il sigillo scomparso", "Demarrant", "Il manto del corvo", "Vento di sangue", "Il segreto della regina".</p>
-  <p style="margin-top:1rem;">7 dei 9 fuorilegge della Casata Celeste a terra. Tenuta in rovina dei Roberts ripulita. Postino chiuso per i mercanti di Hernand (Rhett, Renee, Turnali) e Delesyia (Martina). Lo Scudo dei Tardik sempre a portata di braccio, l'Armatura a piastre di Bolton sulle spalle dal Castello di Hernand (7 contribution token).</p>
-  <div class="tag-list">
-    <span class="tag">Capitolo V</span>
-    <span class="tag">Harpy Nest</span>
-    <span class="tag">Casata Celeste 7/9</span>
-  </div>
-  </div>
+    <a class="section-link" href="situazione.html">
+      <h3>Cronache di Pywel</h3>
+      <p>Snapshot al 21 maggio 2026. Capitoli, fazioni aperte, mappa scoperta, banca, knowledge, todo list.</p>
+      <span class="arrow">Vedi la situazione →</span>
+    </a>
 
-  <div class="diary-entry">
-  <div class="date">CIO' CHE ANCORA RESTA</div>
-  <h2>Le strade aperte</h2>
-  <p>Tredici fazioni con quest in sospeso: Mantogrigio, Casata Celeste, Serkis, Roberts, Alfonso, Foglia d'Oro, Custodi di Pororin, Streghe, Hernand vita+politica, Demeniss, Delesyia, Pailune Vigilante, Ordine di Antumbra. Demeniss da solo ha 0/54 missioni. Delesyia 1/56. Pailune 0/27. Pororin "Campane che risuonano" 2/8.</p>
-  <p>62 regioni su 110 ancora da scoprire. 29 capi non incontrati. 191 forme di vita su 199 mai viste. Il 79% del mondo non e' nemmeno stato aperto.</p>
-  <p style="margin-top:1rem;"><a href="situazione.html" style="color:var(--candle-bright);">Vai alle Cronache di Pywel per la lista completa →</a></p>
   </div>
-
-  <div class="diary-entry">
-  <div class="date">LA PRIMA APERTURA</div>
-  <h2>Quando inizia il diario live</h2>
-  <p>La prima sessione live di Crimson Desert arriva quando la taverna apre ufficialmente su Twitch. Probabile partenza: chiudere il Capitolo V con il nido di Arpie. Annuncio data esatta su Discord e Twitch.</p>
-  <div class="tag-list">
-    <span class="tag">In arrivo</span>
-    <span class="tag">Harpy Nest</span>
-  </div>
-  </div>
-
 </section>
 
 <footer>

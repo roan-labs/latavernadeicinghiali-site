@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Mantogrigio · Crimson Desert · La Taverna dei Cinghiali</title>
+<meta name="description" content="La fazione Greymane secondo Re Kliff. I 12 Cinghiali della Collina Ululante e l'accampamento.">
+
+<meta property="og:title" content="I Mantogrigio della Collina Ululante">
+<meta property="og:description" content="I dodici Cinghiali superstiti di Greymane. La fazione, l'accampamento, le mongolfiere.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/compagni-mantogrigio.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' fill='%230f0803'/&gt;&lt;text x='50%' y='62%' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23f5b952'&gt;T&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.mant-page main { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.mant-page h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold-bright);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.mant-page .epitaph {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+.mant-page .breadcrumb {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 2.5rem;
+}
+.mant-page .breadcrumb a { color: var(--candle-bright); text-decoration: none; }
+.submenu-bar {
+  background: rgba(20,10,4,0.85);
+  border-top: 1px solid rgba(176,138,63,0.25);
+  border-bottom: 1px solid rgba(176,138,63,0.25);
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+}
+.submenu-bar nav {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.submenu-bar nav a {
+  color: var(--parchment-warm);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-right: 1px solid rgba(176,138,63,0.2);
+  transition: color 0.2s;
+}
+.submenu-bar nav a:last-child { border-right: none; }
+.submenu-bar nav a:hover { color: var(--candle-bright); }
+.submenu-bar nav a.active { color: var(--gold-bright); }
+.hero-img {
+  width: 100%;
+  height: 360px;
+  background-image: url('../assets/games/crimson-screens/accampamento.png');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(176,138,63,0.3);
+  margin-bottom: 2rem;
+}
+.mant-page p { color: var(--parchment); line-height: 1.75; font-size: 1.05rem; margin-bottom: 1.2rem; }
+.mant-page h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 1.7rem;
+  margin: 2.5rem 0 1.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(176,138,63,0.25);
+}
+.cinghiali-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 0.7rem;
+  margin: 1.5rem 0 1rem;
+}
+.cing-card {
+  padding: 1rem;
+  background: rgba(232,215,167,0.05);
+  border: 1px solid rgba(176,138,63,0.25);
+  text-align: center;
+}
+.cing-card .name {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.cing-card .status {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.8rem;
+  display: block;
+}
+.disclaimer {
+  background: rgba(15,8,3,0.6);
+  border-left: 3px solid var(--ember);
+  padding: 1rem 1.3rem;
+  margin-top: 3rem;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.95rem;
+}
+</style>
+</head>
+<body class="inner-page mant-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="../index.html" class="brand">
+  <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="../la-taverna.html">La Taverna</a>
+    <a href="../giochi.html">Giochi</a>
+    <a href="../schedule.html">Quando</a>
+    <a href="../roan.html">Roan</a>
+  </nav>
+  <div class="status" id="live-status">
+  <span class="dot offline"></span>
+  <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<section class="submenu-bar">
+  <nav>
+    <a href="crimson-desert.html">La saga</a>
+    <a href="personaggio.html">Chi e' Re Kliff</a>
+    <a class="active" href="mantogrigio.html">I Mantogrigio</a>
+    <a href="equipaggiamento.html">Equipaggiamento</a>
+    <a href="situazione.html">Cronache di Pywel</a>
+  </nav>
+</section>
+
+<main>
+  <h1>I Mantogrigio</h1>
+  <p class="epitaph">"Greymane era un nome buono per le lapidi. Adesso lo dipingiamo sulle mongolfiere."</p>
+  <p class="breadcrumb"><a href="../giochi.html">Giochi</a> · <a href="crimson-desert.html">Crimson Desert</a> · I Mantogrigio</p>
+
+  <div class="hero-img" role="img" aria-label="L'accampamento Mantogrigio sulla Collina Ululante con la mongolfiera"></div>
+
+  <p>I Mantogrigio sono la fazione di Re Kliff. Nei manuali ufficiali di Pearl Abyss li chiamano <strong>Greymane</strong> — Greymane Camp, Greymane Faction, Greymane Coast. In italiano sono Mantogrigio, perche' il loro mantello e' grigio e perche' "Greymane" suona piu' come un nome che come un'insegna.</p>
+
+  <p>La storia ufficiale dice cosi': prima del Prologo del gioco, gli Orsi Neri hanno raso al suolo l'accampamento sulla <strong>Collina Ululante</strong>. Il vecchio capo dei Mantogrigio e' caduto. La fazione e' sparpagliata. Solo un nome rimane.</p>
+
+  <p>Kliff Macduff, che e' arrivato a Hernand giusto in tempo per vedere il fumo ancora caldo, ha preso il nome come insegna. Ha rimesso in piedi la baracca, ha richiamato i superstiti uno per uno facendo loro un favore o due ognuno, e li ha sistemati intorno al fuoco. Oggi sulla Collina Ululante galleggia un Carronuvola blu e oro, e l'accampamento e' di nuovo un crocevia.</p>
+
+  <h2>I 12 Cinghiali della Collina Ululante</h2>
+
+  <p>Dodici superstiti. Tutti con il loro incarico chiuso. Sono loro che hanno dato il nome a questa taverna: nel gergo del gioco i compagni della fazione si chiamano <em>boars</em> — cinghiali. Nel gergo della casa, i Cinghiali sono i nostri.</p>
+
+  <div class="cinghiali-grid">
+    <div class="cing-card"><span class="name">Carl</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Ronald</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Ben</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Tristan</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Brice</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Wynstan</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Conrad</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Alec</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Devan</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Evelyn</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Pierre</span><span class="status">incarico chiuso</span></div>
+    <div class="cing-card"><span class="name">Ronald (II)</span><span class="status">incarico chiuso</span></div>
+  </div>
+
+  <p>Sono i nomi che ho letto negli screenshot del menu "Mantogrigio · Famiglie disperse" e "Ricongiungimento con i compagni" — entrambe le quest a 5/5 chiuse. Se la lista cambia, la aggiorno.</p>
+
+  <h2>L'accampamento</h2>
+
+  <p>Sulla Collina Ululante stasera c'e' la tenda principale, il recinto cavalli, un <strong>Carronuvola</strong> ricarica 2h ormeggiato sopra (e' quello blu e oro della <em>Via del cielo</em>), e una buca dispatch missioni dove i Cinghiali tornano la sera a riferire. Ci sono altri due Carronuvola nel cortile — uno standard ricarica 1h e uno della "Via delle..." (nome troncato nelle mie note).</p>
+
+  <p>Le quest aperte dei Mantogrigio in questo momento: <strong>"La terra dell'alba" 9/10</strong> (manca la "Richiesta di Ben") e <strong>"Ricongiungimento con i compagni"</strong>. La prima si chiude col prossimo passaggio in accampamento. La seconda e' un tipo che torna periodicamente a contare i presenti.</p>
+
+  <h2>I Cinghiali della taverna</h2>
+
+  <p>Nel mondo reale, ci sono altri Cinghiali. Quelli che entrano nel canale Twitch della Taverna. I subs sono <strong>Cinghiali Onorari</strong>, i donatori muovono cose nel gioco — un dettaglio narrativo per 1 CHF, un cambio di rotta per 50.</p>
+
+  <p>Il numero 12 e' un caso, ma per noi e' diventato un'insegna. Quando il dodicesimo Cinghiale online entrera' nel canale, si fa una piccola cerimonia. Quando ne arriveranno cento, ne facciamo una piu' grossa.</p>
+
+  <div class="disclaimer">
+    Greymane / Mantogrigio sono una fazione canonica di Crimson Desert (Pearl Abyss). I nomi dei 12 compagni sono presi dai miei screenshot della save di Kevin del 21 maggio 2026. Il framing "Cinghiali = community" e' nostro: nel gioco non c'e' nessuna taverna chiamata Taverna dei Cinghiali. La sovrapposizione boars-Cinghiali e' un colpo di fortuna semantica che ci e' piaciuto troppo per non sfruttarlo.
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+  <div>
+  <h4>La Taverna</h4>
+  <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+  </div>
+  <div>
+  <h4>Dove trovarci</h4>
+  <ul>
+  <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank">Twitch</a></li>
+  <li><span style="color:var(--parchment-warm);opacity:0.5;">Discord (in arrivo)</span></li>
+  <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank">TikTok</a></li>
+  </ul>
+  </div>
+  <div>
+  <h4>Il custode AI</h4>
+  <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="../roan.html">Scopri chi e'</a>.</p>
+  </div>
+  </div>
+  <div class="footer-bottom">
+  <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

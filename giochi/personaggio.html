@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi e' Re Kliff · Crimson Desert · La Taverna dei Cinghiali</title>
+<meta name="description" content="La biografia non ufficiale di Re Kliff Macduff: 525 di salute, 1.623 silver in banca, Arco del Lupo Grigio e una cavalla che gli vuole bene a Liv 5.">
+
+<meta property="og:title" content="Chi e' Re Kliff Macduff">
+<meta property="og:description" content="Biografia non ufficiale di un re autoproclamato che dorme sulla Collina Ululante.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/scheda-pg.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' fill='%230f0803'/&gt;&lt;text x='50%' y='62%' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23f5b952'&gt;T&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.bio-page main { max-width: 980px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.bio-page h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold-bright);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.bio-page .epitaph {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+}
+.bio-page .breadcrumb {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 2.5rem;
+}
+.bio-page .breadcrumb a { color: var(--candle-bright); text-decoration: none; }
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+.bio-body p { margin-bottom: 1.2rem; line-height: 1.75; color: var(--parchment); font-size: 1.08rem; }
+.bio-body p.lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--candle-bright);
+  line-height: 1.5;
+  border-left: 3px solid var(--gold);
+  padding-left: 1.2rem;
+}
+.bio-card {
+  background: rgba(232,215,167,0.05);
+  border: 1px solid rgba(176,138,63,0.3);
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.bio-card .portrait {
+  height: 240px;
+  background-image: url('../assets/games/crimson-screens/scheda-pg.png');
+  background-size: cover;
+  background-position: center top;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(176,138,63,0.2);
+}
+.bio-card h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(176,138,63,0.2);
+  padding-bottom: 0.4rem;
+}
+.bio-card dl { margin: 0; }
+.bio-card dt {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+}
+.bio-card dd {
+  margin: 0;
+  font-family: 'Cinzel', serif;
+  color: var(--gold-bright);
+  font-size: 1rem;
+}
+.bio-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(176,138,63,0.2);
+}
+.bio-section h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 1.7rem;
+  margin-bottom: 1.2rem;
+}
+.tic-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.tic-list li {
+  padding: 0.7rem 0 0.7rem 2rem;
+  border-bottom: 1px dashed rgba(176,138,63,0.15);
+  position: relative;
+}
+.tic-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+.tic-list li strong { color: var(--candle-bright); }
+.disclaimer {
+  background: rgba(15,8,3,0.6);
+  border-left: 3px solid var(--ember);
+  padding: 1rem 1.3rem;
+  margin-top: 3rem;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.95rem;
+}
+.submenu-bar {
+  background: rgba(20,10,4,0.85);
+  border-top: 1px solid rgba(176,138,63,0.25);
+  border-bottom: 1px solid rgba(176,138,63,0.25);
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+}
+.submenu-bar nav {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.submenu-bar nav a {
+  color: var(--parchment-warm);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-right: 1px solid rgba(176,138,63,0.2);
+  transition: color 0.2s;
+}
+.submenu-bar nav a:last-child { border-right: none; }
+.submenu-bar nav a:hover { color: var(--candle-bright); }
+.submenu-bar nav a.active { color: var(--gold-bright); }
+@media (max-width: 800px) {
+  .bio-grid { grid-template-columns: 1fr; }
+  .bio-card { position: static; }
+}
+</style>
+</head>
+<body class="inner-page bio-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="../index.html" class="brand">
+  <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="../la-taverna.html">La Taverna</a>
+    <a href="../giochi.html">Giochi</a>
+    <a href="../schedule.html">Quando</a>
+    <a href="../roan.html">Roan</a>
+  </nav>
+  <div class="status" id="live-status">
+  <span class="dot offline"></span>
+  <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<section class="submenu-bar">
+  <nav>
+    <a href="crimson-desert.html">La saga</a>
+    <a class="active" href="personaggio.html">Chi e' Re Kliff</a>
+    <a href="mantogrigio.html">I Mantogrigio</a>
+    <a href="equipaggiamento.html">Equipaggiamento</a>
+    <a href="situazione.html">Cronache di Pywel</a>
+  </nav>
+</section>
+
+<main>
+  <h1>Re Kliff Macduff</h1>
+  <p class="epitaph">"Mi chiamano Re. Ho 1.623 silver in tasca. Il conto torna."</p>
+  <p class="breadcrumb"><a href="../giochi.html">Giochi</a> · <a href="crimson-desert.html">Crimson Desert</a> · Chi e' Re Kliff</p>
+
+  <div class="bio-grid">
+    <div class="bio-body">
+
+      <p class="lead">Re Kliff non e' un Re. Lui dice di esserlo, e nessuno ha la voglia di contraddirlo perche' arriva con un Arco del Lupo Grigio sulla schiena che non ha mai smesso di portare dal primo giorno.</p>
+
+      <p>La storia ufficiale dice che e' nato povero da qualche parte ad est di Hernand, e che e' arrivato all'accampamento dei Mantogrigio una notte di tempesta giusto in tempo per vederlo bruciare. La storia non ufficiale, quella che si racconta nelle locande dopo il terzo boccale, dice che ha attraversato mezzo mondo non per cercare la fazione Greymane ma per sfuggire a una vedova molto arrabbiata di Demeniss. Le due versioni sono compatibili.</p>
+
+      <p>Quello che si sa per certo, perche' lo dicono i numeri:</p>
+
+      <ul class="tic-list">
+        <li><strong>Si fa chiamare Re ma ha un esercito di dodici cinghiali.</strong> Carl, Ronald, Ben, Tristan, Brice, Wynstan, Conrad, Alec, Devan, Evelyn, Pierre, e un secondo Ronald di cui nessuno ha il coraggio di chiedere come mai si chiama Ronald anche lui.</li>
+        <li><strong>Possiede tre mongolfiere.</strong> Le ha collezionate prima ancora di avere una casa decente. Le chiama "Carronuvola" perche' "mongolfiere" gli sembra una parola da gente che non sa cavalcare.</li>
+        <li><strong>Ha 525 di salute.</strong> Significa che ha vissuto abbastanza ma anche che ha preso abbastanza randellate da poter aprire una scuola.</li>
+        <li><strong>Ha depositato mille silver in banca su profilo "Proattivo".</strong> Profilo proattivo significa che e' disposto a perdere parte dei suoi mille silver per il gusto di sentirsi un investitore. Il prossimo aggiornamento e' fra 58 minuti. Lui ci pensa.</li>
+        <li><strong>Indossa l'Armatura a piastre di Bolton.</strong> L'ha comprata a Castello di Hernand spendendo 7 Contribution Token che ha guadagnato facendo il postino fra mercanti. E' un re che ha guadagnato la sua corona facendo consegne.</li>
+        <li><strong>Ha una cavalla che si chiama Herspia e che gli vuole bene a Livello 5 su 5.</strong> Questa e' l'unica relazione stabile della sua vita.</li>
+        <li><strong>Conosce il 21% del mondo</strong>. Per uno che si fa chiamare Re e' un dato modesto, ma e' un dato onesto.</li>
+        <li><strong>Si arrabbia solo se gli rubi i gatti.</strong> Quando passa in citta' ne sequestra quanti puo'. Non si sa cosa ci faccia. I sospetti sono brutti.</li>
+      </ul>
+
+      <div class="bio-section">
+        <h2>La cosa che fa bene</h2>
+        <p>Re Kliff ha steso sette dei nove fuorilegge della Casata Celeste. Per due di loro, la taglia era una cifra che valeva meno della birra che gli e' costata trovarli. Lui dice che lo fa "per principio". Sospettiamo che lo faccia perche' i Vigilanti di Pailune lo hanno gia' schedato come ficcanaso, e a quel punto tanto vale guadagnare almeno la fama di chi ficca il naso per il giusto motivo.</p>
+
+        <p>Ha completato l'Istituto della Petraschola al cinque su cinque. Concentrazione, Flusso dell'Abisso, macchinario gravitazionale, radice celeste, Abisso antico. Tutto. Quando glielo chiedi, scrolla le spalle. "Non si tratta di sapere. Si tratta di averli battuti tutti al loro stesso gioco."</p>
+      </div>
+
+      <div class="bio-section">
+        <h2>La cosa che fa male</h2>
+        <p>Tutte le quest "Politica di Hernand" 1/4, "Casata Alfonso" 0/3, "Streghe della saggezza" 0/5, "Pailune Vigilante" 0/27, e per non farsi mancare nulla l'intera "Vita di Delesyia" 0/18. Re Kliff e' un re che esplora la sua giurisdizione con la stessa metodologia di uno che apre un armadio cercando solo i calzini fortunati.</p>
+
+        <p>E poi c'e' Demeniss. Cinquantaquattro missioni. Zero chiuse. Quando glielo nomini cambia argomento e va a controllare se le mongolfiere si sono sgonfiate.</p>
+      </div>
+
+      <div class="bio-section">
+        <h2>Domani</h2>
+        <p>Domani Re Kliff andra' al nido delle Arpie a Pailune. E' l'ultima tappa del Capitolo V. Dopo arriva il Capitolo VI, di cui per ora nessuno sa niente, nemmeno lui. Probabilmente nemmeno gli sceneggiatori del gioco.</p>
+
+        <p>Stasera dorme sulla Collina Ululante. I dodici cinghiali russano. La cavalla Herspia mastica avena. La mongolfiera blu e oro galleggia sopra l'accampamento come un occhio che non si chiude mai. Re Kliff sta seduto sulla panca davanti al fuoco, lucida l'Arco del Lupo Grigio per l'ennesima volta, e finge di leggere un libro sulla finanza.</p>
+      </div>
+
+      <div class="disclaimer">
+        Questa biografia non figura in nessun manuale ufficiale di Pearl Abyss. E' una fanfiction costruita dal custode AI della taverna a partire dagli screenshot della save di Kevin. Re Kliff il personaggio in-game e' Kliff Macduff, protagonista canonico di Crimson Desert. Re Kliff la persona qui descritta e' nostro.
+      </div>
+
+    </div>
+
+    <aside class="bio-card">
+      <div class="portrait" role="img" aria-label="Scheda personaggio di Re Kliff Macduff"></div>
+      <h3>Scheda</h3>
+      <dl>
+        <dt>Titolo</dt><dd>Re (autoproclamato)</dd>
+        <dt>Fazione</dt><dd>Mantogrigio</dd>
+        <dt>Sede</dt><dd>Collina Ululante</dd>
+        <dt>Salute</dt><dd>525 / 525</dd>
+        <dt>Energia</dt><dd>220 / 220</dd>
+        <dt>Spirito</dt><dd>50 / 50</dd>
+        <dt>Difesa</dt><dd>30</dd>
+        <dt>Capitolo</dt><dd>V "L'intruso" 90%</dd>
+        <dt>Mondo noto</dt><dd>21%</dd>
+        <dt>Patrimonio</dt><dd>1.623 silver</dd>
+        <dt>Cavalla</dt><dd>Herspia (Liv. 5)</dd>
+        <dt>Gatti</dt><dd>indefiniti</dd>
+      </dl>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+  <div>
+  <h4>La Taverna</h4>
+  <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+  </div>
+  <div>
+  <h4>Dove trovarci</h4>
+  <ul>
+  <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank">Twitch</a></li>
+  <li><span style="color:var(--parchment-warm);opacity:0.5;">Discord (in arrivo)</span></li>
+  <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank">TikTok</a></li>
+  </ul>
+  </div>
+  <div>
+  <h4>Il custode AI</h4>
+  <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="../roan.html">Scopri chi e'</a>.</p>
+  </div>
+  </div>
+  <div class="footer-bottom">
+  <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>

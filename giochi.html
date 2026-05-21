@@ -2,11 +2,205 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=giochi/crimson-desert.html">
-<title>Giochi · La Taverna dei Cinghiali</title>
-<link rel="canonical" href="giochi/crimson-desert.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Giochi · La Taverna dei Cinghiali</title>
+<meta name="description" content="Il libro dei giochi della Taverna dei Cinghiali. Crimson Desert in corso, gli altri arrivano col tempo.">
+
+<meta property="og:title" content="I Giochi · La Taverna dei Cinghiali">
+<meta property="og:description" content="Crimson Desert in corso, Capitolo V al 90%. Gli altri giochi arrivano col tempo.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-desert.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' fill='%230f0803'/&gt;&lt;text x='50%' y='62%' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23f5b952'&gt;T&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.games-page main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.games-page h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold-bright);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.games-page .hero-sub {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.game-card {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 0;
+  background: rgba(232,215,167,0.04);
+  border: 1px solid rgba(176,138,63,0.3);
+  text-decoration: none;
+  color: var(--parchment);
+  overflow: hidden;
+  transition: all 0.3s;
+  margin-bottom: 2rem;
+}
+.game-card:hover {
+  border-color: var(--gold-bright);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.6);
+}
+.game-card .cover {
+  background-image: url('assets/games/crimson-desert.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 320px;
+}
+.game-card .body {
+  padding: 2rem 2rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.game-card .status-pill {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.3rem 0.9rem;
+  background: var(--ember);
+  color: var(--parchment);
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.game-card h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+.game-card .meta {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 1rem;
+}
+.game-card .desc {
+  color: var(--parchment);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.game-card .open-btn {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+.future-block {
+  border: 1px dashed rgba(176,138,63,0.3);
+  background: rgba(15,8,3,0.5);
+  padding: 2.5rem 2rem;
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.future-block h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--parchment-warm);
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+.future-block p {
+  color: var(--parchment-warm);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .game-card { grid-template-columns: 1fr; }
+  .game-card .cover { min-height: 240px; }
+  .game-card .body { padding: 1.5rem; }
+  .game-card h2 { font-size: 1.7rem; }
+}
+</style>
 </head>
-<body>
-<p>Il gioco attivo in taverna e' Crimson Desert. <a href="giochi/crimson-desert.html">Apri la pagina</a>.</p>
+<body class="inner-page games-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="index.html" class="brand">
+  <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="la-taverna.html">La Taverna</a>
+    <a href="giochi.html">Giochi</a>
+    <a href="schedule.html">Quando</a>
+    <a href="roan.html">Roan</a>
+  </nav>
+  <div class="status" id="live-status">
+  <span class="dot offline"></span>
+  <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<main>
+  <h1>I Giochi</h1>
+  <p class="hero-sub">Quel che gira sul tavolo della taverna. Quando un gioco apre, ci si entra dentro e si rimane finche' c'e' da scoprire.</p>
+
+  <a class="game-card" href="giochi/crimson-desert.html">
+    <div class="cover"></div>
+    <div class="body">
+      <span class="status-pill">In corso · Capitolo V</span>
+      <h2>Crimson Desert</h2>
+      <p class="meta">Pearl Abyss · Open World RPG · 2026</p>
+      <p class="desc">Il viaggio di Re Kliff per le terre di Pywel. Cinque capitoli alle spalle, dodici Cinghiali reclutati sulla Collina Ululante, tre Carronuvola in cortile, una Spada del Lord che non sa cosa sia il riposo. Dentro la pagina trovi la saga, la bio del Re, i Mantogrigio, l'equipaggiamento e le cronache di Pywel.</p>
+      <span class="open-btn">Entra nel diario di Re Kliff →</span>
+    </div>
+  </a>
+
+  <div class="future-block">
+    <h3>Quel che verra'</h3>
+    <p>La taverna ospitera' altri RPG e survival quando arrivera' il tempo. I Cinghiali potranno proporli appena apriamo Discord. L'oste sceglie quale apre il libro per primo.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+  <div>
+  <h4>La Taverna</h4>
+  <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+  </div>
+  <div>
+  <h4>Dove trovarci</h4>
+  <ul>
+  <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank">Twitch</a></li>
+  <li><span style="color:var(--parchment-warm);opacity:0.5;">Discord (in arrivo)</span></li>
+  <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank">TikTok</a></li>
+  </ul>
+  </div>
+  <div>
+  <h4>Il custode AI</h4>
+  <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="roan.html">Scopri chi e'</a>.</p>
+  </div>
+  </div>
+  <div class="footer-bottom">
+  <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
 </body>
 </html>
