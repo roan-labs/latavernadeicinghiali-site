@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notizie · La Taverna dei Cinghiali</title>
+<meta name="description" content="Annunci e aggiornamenti dalla Taverna dei Cinghiali. Apertura social, novita' sui giochi, eventi.">
+
+<meta property="og:title" content="Notizie · La Taverna dei Cinghiali">
+<meta property="og:description" content="Cosa succede in taverna: apertura social, novita' sui giochi, eventi.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-desert.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' fill='%230f0803'/&gt;&lt;text x='50%' y='62%' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23f5b952'&gt;T&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.news-page main { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.news-page h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold-bright);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.news-page .hero-sub {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 1.15rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-entry {
+  background: rgba(232,215,167,0.04);
+  border: 1px solid rgba(176,138,63,0.3);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+}
+.news-entry .date-tag {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--parchment-warm);
+  border: 1px solid var(--gold);
+  padding: 0.3rem 0.9rem;
+  margin-bottom: 1.2rem;
+}
+.news-entry h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.news-entry p {
+  color: var(--parchment);
+  line-height: 1.75;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+.news-entry p:last-child { margin-bottom: 0; }
+.news-entry .lead {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--candle-bright);
+  border-left: 3px solid var(--gold);
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.social-grid a {
+  display: block;
+  padding: 1.4rem 1rem;
+  background: rgba(232,215,167,0.05);
+  border: 1px solid rgba(176,138,63,0.35);
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.25s;
+}
+.social-grid a:hover {
+  border-color: var(--gold-bright);
+  background: rgba(232,215,167,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.social-grid a .platform {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--candle-bright);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.social-grid a .handle {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.9rem;
+}
+@media (max-width: 700px) {
+  .social-grid { grid-template-columns: 1fr; }
+}
+
+.qr-block {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 2rem 0 1rem;
+  padding: 1.5rem;
+  background: rgba(15,8,3,0.6);
+  border-left: 3px solid var(--gold);
+}
+.qr-block img {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(176,138,63,0.3);
+}
+.qr-block h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-bright);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.05em;
+}
+.qr-block p {
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 0;
+}
+@media (max-width: 700px) {
+  .qr-block { grid-template-columns: 1fr; }
+  .qr-block img { max-width: 280px; margin: 0 auto; }
+}
+</style>
+</head>
+<body class="inner-page news-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="index.html" class="brand">
+  <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="la-taverna.html">La Taverna</a>
+    <a href="giochi.html">Giochi</a>
+    <a href="schedule.html">Quando</a>
+    <a href="roan.html">Roan</a>
+  </nav>
+  <div class="status" id="live-status">
+  <span class="dot offline"></span>
+  <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<main>
+  <h1>Notizie</h1>
+  <p class="hero-sub">Annunci, aperture, eventi. Le novita' della taverna in ordine cronologico inverso.</p>
+
+  <article class="news-entry">
+    <span class="date-tag">21 maggio 2026</span>
+    <h2>La Taverna apre i social: TikTok, YouTube e un canale per i Cinghiali</h2>
+
+    <p class="lead">Da oggi la taverna ha quattro porte aperte verso il mondo, oltre a quella principale su Twitch. Tre canali pubblici per i contenuti, e un canale dedicato per chi vuole stare al tavolo con noi tutti i giorni.</p>
+
+    <p>Sono andati live in questi minuti i profili ufficiali della Taverna dei Cinghiali su <strong>TikTok</strong> (clip dalle live, momenti memorabili, comedy di Re Kliff), <strong>YouTube</strong> (VOD lunghi, riassunti settimanali, eventuali tutorial) e il canale dei Cinghiali (chiacchiere a freddo, sondaggi, annunci pre-live, candidature per le partite di gruppo). Sono tre piazze diverse con tre tipi di pubblico, ma la taverna e' una sola.</p>
+
+    <p>Aspettati i primi contenuti nei prossimi giorni. Twitch resta la casa principale, dove l'oste apre il fuoco al tramonto.</p>
+
+    <div class="social-grid">
+      <a href="https://discord.gg/dKcGb4Y9h2" target="_blank" rel="noopener">
+        <span class="platform">Cinghiali</span>
+        <span class="handle">entra nel canale</span>
+      </a>
+      <a href="https://tiktok.com/@latavernadeicinghiali" target="_blank" rel="noopener">
+        <span class="platform">TikTok</span>
+        <span class="handle">@latavernadeicinghiali</span>
+      </a>
+      <a href="https://youtube.com/@latavernadeicinghiali" target="_blank" rel="noopener">
+        <span class="platform">YouTube</span>
+        <span class="handle">@latavernadeicinghiali</span>
+      </a>
+    </div>
+
+    <div class="qr-block">
+      <img src="assets/news/tiktok-qr.jpg" alt="QR code che apre il profilo TikTok @latavernadeicinghiali">
+      <div>
+        <h3>Inquadra il QR per seguirci su TikTok</h3>
+        <p>Apri la fotocamera, inquadra il codice, e il profilo si apre senza dover digitare nulla. Comodo per condividere la taverna offline — al pub, ai raduni, con chi non ha voglia di scrivere @ su una tastiera.</p>
+      </div>
+    </div>
+
+    <p>Twitch follow + qualsiasi di questi canali = non perdi nessuna apertura della taverna. Per chi entra in live e vuole partecipare alle storie del gioco, restano le donazioni gia' attive sul canale.</p>
+  </article>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+  <div>
+  <h4>La Taverna</h4>
+  <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+  </div>
+  <div>
+  <h4>Dove trovarci</h4>
+  <ul>
+  <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank" rel="noopener">Twitch</a></li>
+  <li><a href="https://discord.gg/dKcGb4Y9h2" target="_blank" rel="noopener">Discord</a></li>
+  <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank" rel="noopener">TikTok</a></li>
+  <li><a href="https://youtube.com/@latavernadeicinghiali" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+  </div>
+  <div>
+  <h4>Il custode AI</h4>
+  <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="roan.html">Scopri chi e'</a>.</p>
+  </div>
+  </div>
+  <div class="footer-bottom">
+  <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
