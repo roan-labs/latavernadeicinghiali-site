@@ -4,50 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crimson Desert · La Taverna dei Cinghiali</title>
-<meta name="description" content="Il diario di Re Kliff a Pywel. Sessioni Crimson Desert in italiano.">
+<meta name="description" content="Il diario di Re Kliff a Pywel. Capitolo V in corso, 12 Cinghiali reclutati, 3 mongolfiere sopra Mantogrigio.">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Crimson Desert · La Taverna dei Cinghiali">
-<meta property="og:description" content="Il viaggio di Re Kliff a Pywel. Sequestratore di gatti, terrore delle staccionate, aspirante Spiderman.">
-<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-desert.jpg">
+<meta property="og:description" content="Capitolo V al 90%. 12 Cinghiali reclutati. 3 Carronuvola sopra la Collina Ululante. Il viaggio di Re Kliff per Pywel.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/accampamento.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://roan-labs.github.io/latavernadeicinghiali-site/giochi/crimson-desert.html">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🐗&lt;/text&gt;&lt;/svg&gt;">
 <link rel="stylesheet" href="../assets/style.css">
 <style>
 .game-hero {
   position: relative;
-  height: 60vh;
-  min-height: 400px;
+  height: 70vh;
+  min-height: 460px;
   display: flex;
   align-items: flex-end;
   padding: 4rem 2rem;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 .game-hero .bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/games/crimson-desert.jpg');
+  background-image: url('../assets/games/crimson-screens/accampamento.png');
   background-size: cover;
   background-position: center;
-  filter: brightness(0.55) contrast(1.05);
+  filter: brightness(0.7) contrast(1.05);
   z-index: -1;
 }
 .game-hero .bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15, 8, 3, 0.95) 0%, rgba(15, 8, 3, 0.3) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(15, 8, 3, 0.96) 0%, rgba(15, 8, 3, 0.4) 50%, transparent 100%);
 }
 .game-hero h1 {
   font-family: 'Cinzel', serif;
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: var(--candle-bright);
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
   font-weight: 900;
   letter-spacing: 0.05em;
   margin: 0;
@@ -60,22 +60,98 @@
   font-family: 'IM Fell English', serif;
   font-style: italic;
   color: var(--parchment-warm);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-top: 0.5rem;
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
-.game-intro {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem 3rem;
-  text-align: center;
+.intro-strip {
+  background: rgba(15, 8, 3, 0.95);
+  padding: 3rem 2rem;
+  border-bottom: 1px solid rgba(176, 138, 63, 0.2);
 }
-.game-intro p {
-  font-size: 1.15rem;
+.intro-strip .container {
+  max-width: 900px;
+}
+.intro-strip p {
+  font-size: 1.18rem;
   color: var(--parchment);
+  margin-bottom: 1rem;
+}
+.intro-strip p:last-child {
+  margin-bottom: 0;
+}
+
+.stat-bar {
+  background: rgba(20, 10, 4, 0.7);
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid rgba(176, 138, 63, 0.2);
+}
+.stat-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+.stat-tile {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(232, 215, 167, 0.04);
+  border: 1px solid rgba(176, 138, 63, 0.2);
+}
+.stat-tile .num {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: var(--candle-bright);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.stat-tile .lbl {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--parchment-warm);
+}
+.deep-link-bar {
+  padding: 3rem 2rem;
+  background: linear-gradient(to bottom, rgba(15, 8, 3, 0.7), rgba(20, 10, 4, 0.95));
+}
+.deep-link-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.deep-link {
+  display: block;
+  padding: 1.8rem 1.5rem;
+  background: rgba(232, 215, 167, 0.04);
+  border: 1px solid rgba(176, 138, 63, 0.3);
+  border-radius: 2px;
+  text-decoration: none;
+  color: var(--parchment);
+  transition: all 0.25s;
+}
+.deep-link:hover {
+  border-color: var(--gold-bright);
+  background: rgba(232, 215, 167, 0.08);
+  transform: translateY(-3px);
+}
+.deep-link h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-bright);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.deep-link p {
+  font-size: 0.95rem;
+  color: var(--parchment-warm);
+  margin-bottom: 0;
 }
 .diario-header {
   max-width: 900px;
@@ -111,7 +187,7 @@
   border-radius: 2px;
 }
 @media (max-width: 800px) {
-  .game-hero h1 { font-size: 2.2rem; }
+  .game-hero h1 { font-size: 2.5rem; }
 }
 </style>
 </head>
@@ -145,31 +221,62 @@
   <div class="bg"></div>
   <div>
     <h1>Crimson Desert</h1>
-    <p class="meta">Pearl Abyss · Open World RPG · IN CORSO</p>
+    <p class="meta">Pearl Abyss · Open World RPG · CAPITOLO V — "L'INTRUSO"</p>
   </div>
 </section>
 
-<section class="game-intro">
-  <p>Re Kliff regna a Pywel. Almeno, lui dice di regnare. <strong>Terrore delle staccionate</strong>, sequestratore di gatti teneri, aspirante Spiderman dei campanili, combattente "imprevedibile" che vince le boss fight a botte di vino. Il manuale di combattimento di Re Kliff ha due regole: <em>uno, vinci. Due, non c'è regola due.</em></p>
-  <p>In questa pagina trovi il diario di tutte le sessioni Crimson Desert. Aggiornato da Roan.</p>
+<section class="intro-strip">
+  <div class="container">
+    <p><strong>Re Kliff regna a Pywel.</strong> Almeno, lui dice di regnare. Quando è arrivato a Hernand, l'accampamento dei Mantogrigio era una pira spenta e un nome buono solo per le lapidi. Lui se l'è preso come insegna, ha rimesso in piedi la baracca sulla <strong>Collina Ululante</strong>, ha richiamato 12 cinghiali superstiti uno a uno, e oggi ci galleggia sopra una mongolfiera blu e oro come se fosse sempre stata lì.</p>
+
+    <p>Cinque capitoli alle spalle. Tre Carronuvola nel cortile. Sette fuorilegge stesi sul libro mastro della Casata Celeste. Una Spada del Lord affilata cento su cento, l'Arco del Lupo Grigio sulla schiena, e la cavalla Herspia che gli vuole bene a Livello 5. Stasera dorme sulla Collina Ululante. Domani lo aspetta un nido di Arpie.</p>
+  </div>
 </section>
 
-<section class="diario-header">
+<section class="stat-bar">
+  <div class="stat-grid">
+    <div class="stat-tile"><span class="num">V</span><span class="lbl">capitolo in corso</span></div>
+    <div class="stat-tile"><span class="num">12</span><span class="lbl">Cinghiali reclutati</span></div>
+    <div class="stat-tile"><span class="num">3</span><span class="lbl">Carronuvola</span></div>
+    <div class="stat-tile"><span class="num">1.623</span><span class="lbl">silver liquidi</span></div>
+    <div class="stat-tile"><span class="num">48/110</span><span class="lbl">regioni scoperte</span></div>
+    <div class="stat-tile"><span class="num">21%</span><span class="lbl">conoscenza totale</span></div>
+  </div>
+</section>
+
+<section class="deep-link-bar">
+  <div class="deep-link-grid">
+    <a class="deep-link" href="situazione.html">
+      <h3>📜 Situazione attuale</h3>
+      <p>Cosa Re Kliff ha fatto, cosa deve ancora fare. Quest, fazioni, mappa, knowledge.</p>
+    </a>
+    <a class="deep-link" href="equipaggiamento.html">
+      <h3>⚔️ Equipaggiamento</h3>
+      <p>Spade, arco, armatura, scudo. Cosa porta addosso il re. Click per i dettagli.</p>
+    </a>
+    <a class="deep-link" href="#cronache">
+      <h3>🪶 Cronache di Pywel</h3>
+      <p>Diario delle sessioni live in ordine cronologico. La prima entrata aspetta il via.</p>
+    </a>
+  </div>
+</section>
+
+<section class="diario-header" id="cronache">
   <h2>Cronache di Pywel</h2>
-  <p class="hero-sub">Le sessioni live, in ordine cronologico inverso.</p>
+  <p class="hero-sub">Le sessioni live, in ordine cronologico inverso. Scrive Roan.</p>
 </section>
 
 <section class="diario-list">
 
   <div class="diary-entry">
-    <div class="date">PROSSIMAMENTE · CAPITOLO 0</div>
+    <div class="date">CAPITOLO 0 · IN ARRIVO</div>
     <h2>L'apertura della Taverna</h2>
-    <p>La prima sessione live di Crimson Desert arriva quando la taverna apre ufficialmente. Roan terra' qui il diario: cosa abbiamo fatto, quali quest sono cadute, chi tra i Cinghiali e' arrivato per primo.</p>
+    <p>La prima sessione live di Crimson Desert arriva quando la taverna apre ufficialmente. Stato in entrata: Capitolo V al 90%, 12 Cinghiali in accampamento, tre Carronuvola gonfiati, e una Spada del Lord che non aspetta altro che del lavoro. Inizieremo da "Alla volta del nido", l'ultima tappa del Capitolo V — un nido di Arpie ci aspetta a Pailune.</p>
     <p>Aspetta l'annuncio su Discord e su Twitch per la data esatta della prima apertura.</p>
     <div class="tag-list">
       <span class="tag">In arrivo</span>
-      <span class="tag">Crimson Desert</span>
-      <span class="tag">Capitolo 0</span>
+      <span class="tag">Capitolo V</span>
+      <span class="tag">Harpy Nest</span>
     </div>
   </div>
 

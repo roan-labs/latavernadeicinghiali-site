@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Situazione di Re Kliff · Crimson Desert · La Taverna dei Cinghiali</title>
+<meta name="description" content="Dove e' arrivato Re Kliff in Crimson Desert. Capitolo V al 90%, 12 Cinghiali, 3 mongolfiere, 1.623 silver.">
+
+<meta property="og:title" content="Situazione di Re Kliff · Crimson Desert">
+<meta property="og:description" content="Capitolo V al 90%, 12 Cinghiali della Mantogrigio, 3 Carronuvola. La mappa scoperta al 44%.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/accampamento.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🐗&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.situazione-page main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+.situazione-page h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold-bright);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.situazione-page .breadcrumb {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 3rem;
+}
+.situazione-page .breadcrumb a { color: var(--candle-bright); text-decoration: none; }
+.section-block {
+  margin-bottom: 3.5rem;
+}
+.section-block h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(176, 138, 63, 0.3);
+}
+.section-block h2 .small {
+  font-size: 1rem;
+  color: var(--parchment-warm);
+  font-style: italic;
+  margin-left: 0.5rem;
+}
+.section-block p { margin-bottom: 1rem; }
+.section-block ul { list-style: none; padding-left: 0; }
+.section-block ul li {
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed rgba(176, 138, 63, 0.15);
+  padding-left: 1.5rem;
+  position: relative;
+}
+.section-block ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+.section-screen {
+  margin: 1.5rem 0;
+  border: 1px solid rgba(176, 138, 63, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--wood-dark);
+}
+.section-screen img { width: 100%; display: block; }
+.section-screen .caption {
+  padding: 0.7rem 1rem;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--parchment-warm);
+  background: rgba(15, 8, 3, 0.9);
+  border-top: 1px solid rgba(176, 138, 63, 0.2);
+}
+.cap-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.cap-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  color: var(--gold-bright);
+  min-width: 240px;
+}
+.cap-prog {
+  flex: 1;
+  height: 8px;
+  background: rgba(232, 215, 167, 0.1);
+  border: 1px solid rgba(176, 138, 63, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cap-prog .fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--candle-deep), var(--candle-bright));
+}
+.cap-pct {
+  min-width: 50px;
+  text-align: right;
+  font-family: 'Cinzel', serif;
+  color: var(--parchment);
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 700px) {
+  .two-col { grid-template-columns: 1fr; }
+  .cap-name { min-width: 0; font-size: 0.95rem; }
+}
+.todo-list li::before { color: var(--ember) !important; content: "✗" !important; }
+.done-list li::before { color: #6db064 !important; content: "✓" !important; }
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.region-tile {
+  padding: 1rem;
+  background: rgba(232, 215, 167, 0.04);
+  border: 1px solid rgba(176, 138, 63, 0.2);
+  text-align: center;
+}
+.region-tile .name {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-bright);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.region-tile .status {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--parchment-warm);
+}
+</style>
+</head>
+<body class="inner-page situazione-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="/" class="brand">
+    <span class="brand-mark">🍖</span>
+    <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="/la-taverna.html">La Taverna</a>
+    <a href="/giochi.html">I Giochi</a>
+    <a href="/diario.html">Il Diario</a>
+    <a href="/roan.html">Roan</a>
+    <a href="/schedule.html">Quando</a>
+  </nav>
+  <div class="status" id="live-status">
+    <span class="dot offline"></span>
+    <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<main>
+  <h1>Situazione di Re Kliff</h1>
+  <p class="breadcrumb"><a href="/giochi.html">I Giochi</a> · <a href="crimson-desert.html">Crimson Desert</a> · Snapshot 21 maggio 2026</p>
+
+  <div class="section-block">
+    <h2>📜 La saga principale</h2>
+    <p>Cinque capitoli chiusi col timbro. Il sesto è in arrivo. Adesso Re Kliff sta uscendo dalle ultime righe di "L'intruso" — l'unica cosa che lo separa dal Capitolo VI è un nido di Arpie a Pailune.</p>
+
+    <div class="cap-bar"><span class="cap-name">Prologo · Nel cuore della notte</span><div class="cap-prog"><div class="fill" style="width:100%"></div></div><span class="cap-pct">100%</span></div>
+    <div class="cap-bar"><span class="cap-name">I · Primo incontro</span><div class="cap-prog"><div class="fill" style="width:100%"></div></div><span class="cap-pct">100%</span></div>
+    <div class="cap-bar"><span class="cap-name">II · Avidità dorata</span><div class="cap-prog"><div class="fill" style="width:100%"></div></div><span class="cap-pct">100%</span></div>
+    <div class="cap-bar"><span class="cap-name">III · Collina Ululante</span><div class="cap-prog"><div class="fill" style="width:100%"></div></div><span class="cap-pct">100%</span></div>
+    <div class="cap-bar"><span class="cap-name">IV · Il prezzo della conoscenza</span><div class="cap-prog"><div class="fill" style="width:100%"></div></div><span class="cap-pct">100%</span></div>
+    <div class="cap-bar"><span class="cap-name">V · L'intruso</span><div class="cap-prog"><div class="fill" style="width:90%"></div></div><span class="cap-pct">90%</span></div>
+
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/quest-log.png" alt="Diario delle quest principali">
+      <div class="caption">Il libro delle quest. Cinque timbri verdi, uno mezzo aperto. Si stringe.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>🐗 L'accampamento Mantogrigio <span class="small">— la casa dei Cinghiali</span></h2>
+    <p>Sulla <strong>Collina Ululante</strong>, dove un tempo c'era il vecchio quartier generale dei Mantogrigio prima che gli Orsi Neri lo riducessero a cenere. Re Kliff l'ha ricostruito e ci ha messo dentro 12 cinghiali superstiti, uno per uno. È da qui che parte e qui che torna.</p>
+
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/accampamento.png" alt="L'accampamento Mantogrigio con il Carronuvola sopra">
+      <div class="caption">Il Carronuvola blu e oro sopra la Collina Ululante. Non si capisce mai bene se è una mongolfiera o un'insegna.</div>
+    </div>
+
+    <h3 style="font-family:'Cinzel',serif;color:var(--gold-bright);margin-top:2rem;margin-bottom:1rem;">I 12 Cinghiali reclutati</h3>
+    <div class="two-col">
+      <ul>
+        <li>Carl</li>
+        <li>Ronald</li>
+        <li>Ben</li>
+        <li>Tristan</li>
+        <li>Brice</li>
+        <li>Wynstan</li>
+      </ul>
+      <ul>
+        <li>Conrad</li>
+        <li>Alec</li>
+        <li>Devan</li>
+        <li>Evelyn</li>
+        <li>Pierre</li>
+        <li>+ un secondo Ronald (è una taverna, non un registro)</li>
+      </ul>
+    </div>
+
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/compagni-mantogrigio.png" alt="Racconti dei Mantogrigio con la lista dei compagni">
+      <div class="caption">Schermata Mantogrigio. Ognuno di questi nomi ha il suo incarico chiuso. Famiglia ricomposta.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>☁️ Le Carronuvola <span class="small">— tre mongolfiere e nessuna pazienza</span></h2>
+    <p>Tre Carronuvola nel cortile. Una della "Via del cielo" (ricarica 2 ore reali), una standard (1 ora), una col nome troncato che decifreremo prima o poi. Stesso bug della community: se si rompe esplode. Onore alle vittime.</p>
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/carronuvola.png" alt="Inventario delle 3 mongolfiere">
+      <div class="caption">Tre mongolfiere. Cinque possibili posti del cielo. Una probabilità statistica di esplosione che non vogliamo nominare.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>⚔️ L'equipaggiamento di Re Kliff</h2>
+    <p>Una Spada del Lord affilata cento su cento, l'Arco del Lupo Grigio sulla schiena dal primo giorno, una Spada a due mani di Rugiadaquieta per quando serve farsi notare. Armatura a piastre di Bolton comprata con 7 Contribution Token al Castello di Hernand — investimento serio, l'hanno notato in città. <a href="equipaggiamento.html">Apri il pannello completo →</a></p>
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/scheda-pg.png" alt="Pannello PG completo di Re Kliff">
+      <div class="caption">525 HP, 220 Energia, Difesa 30. Numeri onesti per un re che si fa le battaglie da solo.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>💰 Tesoro</h2>
+    <p>Net worth liquido circa <strong>1.623 silver</strong>. Due lingotti d'oro depositati alla cassaforte (1.000 silver) e 623 monete sciolte in tasca. Profilo investimento: Proattivo, prossimo aggiornamento 58 minuti. Re Kliff non si fida del materasso.</p>
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/banca-tesoro.png" alt="Schermata banca con i lingotti depositati">
+      <div class="caption">La cassaforte. 1.000 silver in lingotti, profilo "Proattivo". Re Kliff scommette.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>🗺️ La mappa scoperta</h2>
+    <p>48 regioni su 110. Il 44% di Pywel. Continenti scoperti almeno parzialmente: Hernand, Demeniss, Delesyia, Pailune, e una scappatina visiva al Crimson Desert vero (Tashaly, lago centrale). Restano ancora 7 grandi territori da camminare.</p>
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/mappa-esplorata.png" alt="Mappa con le regioni scoperte">
+      <div class="caption">Demeniss, Delesyia, Mount Rein, Gorthax. Più sud andiamo, più sabbia.</div>
+    </div>
+    <div class="region-grid">
+      <div class="region-tile"><span class="name">Hernand</span><span class="status">hub, esplorato</span></div>
+      <div class="region-tile"><span class="name">Demeniss</span><span class="status">parziale</span></div>
+      <div class="region-tile"><span class="name">Delesyia</span><span class="status">parziale</span></div>
+      <div class="region-tile"><span class="name">Pailune</span><span class="status">parziale</span></div>
+      <div class="region-tile"><span class="name">Crimson Desert</span><span class="status">avvistato</span></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>🐴 Compagni di viaggio</h2>
+    <p>La cavalla si chiama <strong>Herspia</strong>. Fiducia Livello 5 (massima — gli vuole bene). 495 HP, 255 energia, Difesa 47. Non sequestrata, non rubata. Comprata. Quasi un record.</p>
+    <p>In più: un cane marrone come compagno animale. Re Kliff colleziona animali teneri da quando è bambino — al momento il rapporto è 1 su 30 possibili. C'è ancora margine.</p>
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/cavallo-herspia.png" alt="Statistiche di Herspia, la cavalla di Re Kliff">
+      <div class="caption">Herspia. Fiducia 5/5. Quando lo vede arrivare nitrisce, anche se sa che ci sarà da galoppare contro qualcuno.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>⚖️ Cacciatore di taglie part-time</h2>
+    <p>La Casata Celeste di Hernand tiene un libro mastro dei fuorilegge ricercati. Re Kliff ne ha stesi 7 dei 9 in lista. Mancano Salvatore e uno fra Jeffrey, Simon de Monport, Alessio o Blix. Domanda aperta: chi tra questi non vede l'alba di sabato?</p>
+    <div class="section-screen">
+      <img src="../assets/games/crimson-screens/casata-celeste-fuorilegge.png" alt="Libro mastro fuorilegge Casata Celeste">
+      <div class="caption">Sette segni di spunta verdi e due nomi ancora liberi. Per ora.</div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>📋 Cosa Re Kliff non ha ancora fatto <span class="small">— elenco onesto</span></h2>
+    <ul class="todo-list">
+      <li>Chiudere il Capitolo V: il nido delle Arpie a Pailune.</li>
+      <li>Aprire il Capitolo VI (nessuno sa ancora come si chiama).</li>
+      <li>Casata Serkis: "Nobile tra le rovine" — il sentiero distrutto attende.</li>
+      <li>Casata Alfonso: tutta la linea "Casa delle lance" è ancora a zero.</li>
+      <li>Gilda Foglia d'Oro: "Brace spenta" 1/7 — ci sono cinque mercanti da disturbare.</li>
+      <li>Custodi della Foresta di Pororin: 6 regioni da campanare, più i Bambini del bosco.</li>
+      <li>Streghe: "La Strega della saggezza" 0/5 — Sanctum, assoluzione, temperanza, penitenza, benedizione.</li>
+      <li>Demeniss: 54 missioni in coda. Le faremo. Forse.</li>
+      <li>Esplorazione: 62 regioni ancora coperte di sabbia, 29 boss da incontrare, 191 forme di vita da conoscere.</li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>📊 Numeri secchi</h2>
+    <div class="two-col">
+      <ul>
+        <li>Salute: 525 / 525</li>
+        <li>Energia: 220 / 220</li>
+        <li>Spirito: 50 / 50</li>
+        <li>Attacco base: 6</li>
+        <li>Difesa: 30</li>
+        <li>Velocità movimento: Liv 3</li>
+        <li>Resistenza fuoco: Liv 3</li>
+      </ul>
+      <ul>
+        <li>Knowledge totale: 645 / 3074 (21%)</li>
+        <li>Forme di vita: 60 / 199</li>
+        <li>Boss incontrati: 6 / 35</li>
+        <li>Cavalcature: 8 / 29</li>
+        <li>Risorse note: 91 / 325</li>
+        <li>Collezionabili: 22 / 94</li>
+        <li>Frammenti di memoria: 15 / 265</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>La Taverna</h4>
+      <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+    </div>
+    <div>
+      <h4>Dove trovarci</h4>
+      <ul>
+        <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank">Twitch</a></li>
+        <li><a href="#" target="_blank">Discord</a></li>
+        <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Il custode AI</h4>
+      <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="/roan.html">Scopri chi e'</a>.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+</body>
+</html>
