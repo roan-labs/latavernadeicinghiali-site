@@ -4,24 +4,266 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Taverna dei Cinghiali</title>
-<meta name="description" content="Una taverna online dove si gioca senza fretta. RPG, survival, co-op. Italiano, chill, niente meta. Entra e siediti.">
+<meta name="description" content="Re Kliff regna a Pywel, capitolo V al 90 percento. 12 Cinghiali reclutati alla Collina Ululante, 3 mongolfiere, banca della Casata Celeste mezzo ripulita. La taverna online dove si gioca lento, in italiano.">
 
-<!-- Open Graph (preview link su WhatsApp/X/Discord/Telegram) -->
 <meta property="og:title" content="La Taverna dei Cinghiali">
-<meta property="og:description" content="Entra, viandante: qui il boccale è sempre pieno e la fretta resta fuori. RPG, survival, italiano, chill.">
-<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-desert.jpg">
+<meta property="og:description" content="La cronaca di Re Kliff a Pywel. Crimson Desert, RPG, italiano, niente fretta.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/accampamento.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://roan-labs.github.io/latavernadeicinghiali-site/">
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Favicon SVG inline (boar emoji as fallback) -->
-<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🐗&lt;/text&gt;&lt;/svg&gt;">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' fill='%230f0803'/&gt;&lt;text x='50%' y='62%' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23f5b952'&gt;T&lt;/text&gt;&lt;/svg&gt;">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+.kliff-strip {
+  padding: 5rem 2rem;
+  background: rgba(15,8,3,0.7);
+  border-top: 1px solid rgba(176,138,63,0.2);
+  border-bottom: 1px solid rgba(176,138,63,0.2);
+}
+.kliff-strip .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.kliff-strip .image {
+  height: 480px;
+  background-image: url('assets/games/crimson-screens/accampamento.png');
+  background-size: cover;
+  background-position: center;
+  filter: contrast(1.05);
+  border: 1px solid rgba(176,138,63,0.3);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.kliff-strip .chapter-tag {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: var(--ember);
+  color: var(--parchment);
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+.kliff-strip h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  color: var(--candle-bright);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.kliff-strip .subtitle {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+.kliff-strip p.lede {
+  color: var(--parchment);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+.kliff-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.7rem;
+  margin: 1.7rem 0 1.5rem;
+}
+.kliff-numbers .n {
+  text-align: center;
+  padding: 0.9rem 0.4rem;
+  background: rgba(232,215,167,0.04);
+  border: 1px solid rgba(176,138,63,0.2);
+}
+.kliff-numbers .n strong {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+.kliff-numbers .n span {
+  display: block;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--parchment-warm);
+  margin-top: 0.2rem;
+}
+.kliff-strip .cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.kliff-strip .btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  color: var(--candle-bright);
+  background: transparent;
+  transition: all 0.2s;
+}
+.kliff-strip .btn:hover { background: var(--gold); color: var(--wood-dark); }
+.kliff-strip .btn.primary {
+  background: linear-gradient(to bottom, var(--candle), var(--candle-deep));
+  color: var(--wood-dark);
+  border-color: var(--gold-bright);
+}
+.kliff-strip .btn.primary:hover { filter: brightness(1.1); }
+@media (max-width: 900px) {
+  .kliff-strip .container { grid-template-columns: 1fr; }
+  .kliff-strip .image { height: 280px; }
+}
+
+.cinghiali-strip {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, rgba(15,8,3,0.5), rgba(20,10,4,0.85));
+}
+.cinghiali-strip .container { max-width: 1200px; margin: 0 auto; }
+.cinghiali-strip .heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.cinghiali-strip h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  color: var(--gold-bright);
+  margin-bottom: 0.5rem;
+}
+.cinghiali-strip .sub {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.cinghiali-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 0.6rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cinghiale {
+  padding: 0.9rem 1rem;
+  background: rgba(232,215,167,0.05);
+  border: 1px solid rgba(176,138,63,0.25);
+  text-align: center;
+}
+.cinghiale .name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  color: var(--candle-bright);
+  display: block;
+}
+.cinghiale .status {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--parchment-warm);
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.mongolfiere {
+  padding: 5rem 2rem;
+  background: rgba(15,8,3,0.7);
+}
+.mongolfiere .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.mongolfiere .image {
+  height: 380px;
+  background-image: url('assets/games/crimson-screens/carronuvola.png');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(176,138,63,0.3);
+}
+.mongolfiere h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2.4rem;
+  color: var(--gold-bright);
+  margin-bottom: 1rem;
+}
+.mongolfiere ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+.mongolfiere ul li {
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed rgba(176,138,63,0.2);
+  color: var(--parchment);
+}
+.mongolfiere ul li strong {
+  color: var(--candle-bright);
+  font-family: 'Cinzel', serif;
+  display: block;
+  font-size: 1.05rem;
+}
+.mongolfiere ul li span {
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.9rem;
+}
+@media (max-width: 900px) {
+  .mongolfiere .container { grid-template-columns: 1fr; }
+  .mongolfiere .image { height: 240px; }
+}
+
+.house-strip {
+  padding: 4rem 2rem;
+}
+.house-strip .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.house-strip h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: var(--gold-bright);
+  margin-bottom: 1.5rem;
+}
+.house-strip p {
+  font-size: 1.1rem;
+  color: var(--parchment);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.house-strip p.quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--candle-bright);
+  margin: 2rem auto;
+  max-width: 700px;
+}
+</style>
 </head>
 <body class="home">
 
@@ -33,135 +275,163 @@
 
 <header class="top-nav">
   <a href="/" class="brand">
-    <span class="brand-mark">🍖</span>
-    <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
   </a>
   <nav>
     <a href="/la-taverna.html">La Taverna</a>
-    <a href="/giochi.html">I Giochi</a>
-    <a href="/diario.html">Il Diario</a>
-    <a href="/roan.html">Roan</a>
+    <a href="/giochi/crimson-desert.html">Crimson Desert</a>
+    <a href="/giochi/situazione.html">Cronache di Pywel</a>
     <a href="/schedule.html">Quando</a>
+    <a href="/roan.html">Roan</a>
   </nav>
   <div class="status" id="live-status">
-    <span class="dot offline"></span>
-    <span>Taverna chiusa</span>
+  <span class="dot offline"></span>
+  <span>Offline</span>
   </div>
 </header>
 
 <main class="entrance">
   <div class="door-frame">
-    <div class="candle left">
-      <div class="flame"></div>
-      <div class="wax"></div>
-    </div>
-    <div class="candle right">
-      <div class="flame"></div>
-      <div class="wax"></div>
-    </div>
-    <h1 class="title">
-      <span class="word-1">La Taverna</span>
-      <span class="word-2">dei Cinghiali</span>
-    </h1>
-    <p class="lead">Entra, viandante:<br>
-    qui il boccale è sempre pieno<br>
-    e la fretta resta fuori.</p>
+  <div class="candle left">
+  <div class="flame"></div>
+  <div class="wax"></div>
+  </div>
+  <div class="candle right">
+  <div class="flame"></div>
+  <div class="wax"></div>
+  </div>
+  <h1 class="title">
+  <span class="word-1">La Taverna</span>
+  <span class="word-2">dei Cinghiali</span>
+  </h1>
+  <p class="lead">Entra, viandante:<br>
+  qui il boccale è sempre pieno<br>
+  e la fretta resta fuori.</p>
 
-    <div class="ctas">
-      <a class="cta primary" href="https://twitch.tv/latavernadeicinghiali" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
-        <span>Apri la porta su Twitch</span>
-      </a>
-      <a class="cta secondary" href="/giochi.html">
-        <span>Sfoglia il libro dei giochi</span>
-      </a>
-    </div>
+  <div class="ctas">
+  <a class="cta primary" href="https://twitch.tv/latavernadeicinghiali" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/></svg>
+  <span>Apri la porta su Twitch</span>
+  </a>
+  <a class="cta secondary" href="/giochi/crimson-desert.html">
+  <span>Vedi cosa gira sul tavolo</span>
+  </a>
+  </div>
 
   </div>
 </main>
 
-<section class="welcome">
+<section class="kliff-strip">
   <div class="container">
-    <h2>Benvenuto, forestiero</h2>
-    <p>Questa e' una taverna online. Un posto dove l'oste apre il fuoco al tramonto, mette una birra sul tavolo, e gioca a videogiochi senza pretese di vincere. <strong>Si gioca lento.</strong> Si parla in italiano. Si tiene aperto a chiunque entri.</p>
+    <div>
+      <span class="chapter-tag">In corso · Capitolo V — L'intruso</span>
+      <h2>Re Kliff a Pywel</h2>
+      <p class="subtitle">Crimson Desert · Pearl Abyss · open world RPG</p>
+      <p class="lede">Quando Re Kliff è arrivato a Hernand, le ceneri del massacro dei Mantogrigio erano ancora calde. Gli Orsi Neri avevano steso il vecchio capo e lasciato un nome — Greymane — buono solo per le lapidi. Kliff ne ha fatto un'insegna. Ha rimesso in piedi l'accampamento sulla Collina Ululante, ha richiamato uno a uno i cinghiali superstiti, e oggi ci galleggia sopra una mongolfiera blu e oro come se fosse sempre stata lì.</p>
+      <p class="lede">Cinque capitoli alle spalle. Tre Carronuvola nel cortile. Sette fuorilegge sul libro mastro della Casata Celeste. Stasera dorme sulla Collina Ululante. Domani lo aspetta un nido di Arpie.</p>
 
-    <div class="three-cards">
-      <div class="card">
-        <span class="card-icon">🎮</span>
-        <h3>I Giochi</h3>
-        <p>RPG longevi, survival a fuoco lento, indie con anima. Quel che gira sul tavolo cambia. Apri il libro e vedi cosa c'e' adesso.</p>
-        <a href="/giochi.html">Sfoglia il libro</a>
+      <div class="kliff-numbers">
+        <div class="n"><strong>V</strong><span>capitolo in corso</span></div>
+        <div class="n"><strong>12</strong><span>Cinghiali</span></div>
+        <div class="n"><strong>3</strong><span>Carronuvola</span></div>
+        <div class="n"><strong>525</strong><span>Salute</span></div>
+        <div class="n"><strong>1.623</strong><span>silver</span></div>
+        <div class="n"><strong>48/110</strong><span>regioni</span></div>
       </div>
-      <div class="card">
-        <span class="card-icon">📜</span>
-        <h3>Il Diario</h3>
-        <p>Ogni sessione live diventa un'entrata. Sommari, screenshot, momenti memorabili, scelte della chat. Lo aggiorna Roan, il custode AI.</p>
-        <a href="/diario.html">Apri il diario</a>
+
+      <div class="cta-row">
+        <a class="btn primary" href="/giochi/situazione.html">Apri le Cronache di Pywel</a>
+        <a class="btn" href="/giochi/equipaggiamento.html">Vedi l'equipaggiamento</a>
       </div>
-      <div class="card">
-        <span class="card-icon">🐗</span>
-        <h3>I Cinghiali</h3>
-        <p>Cosi' si chiama chi entra spesso. Subs sono Cinghiali Onorari. Donatori muovono le storie del gioco. La community e' il vero protagonista.</p>
-        <a href="/la-taverna.html">Conosci la casa</a>
-      </div>
+    </div>
+    <div class="image" role="img" aria-label="L'accampamento dei Mantogrigio sulla Collina Ululante con la mongolfiera blu e oro sopra"></div>
+  </div>
+</section>
+
+<section class="cinghiali-strip">
+  <div class="container">
+    <div class="heading">
+      <h2>I 12 Cinghiali della Collina Ululante</h2>
+      <p class="sub">I superstiti dei Mantogrigio che Re Kliff ha richiamato uno a uno. Ognuno ha un incarico chiuso. Sono loro che dànno il nome alla taverna.</p>
+    </div>
+    <div class="cinghiali-list">
+      <div class="cinghiale"><span class="name">Carl</span><span class="status">incarico 1/12</span></div>
+      <div class="cinghiale"><span class="name">Ronald</span><span class="status">incarico 2/12</span></div>
+      <div class="cinghiale"><span class="name">Ben</span><span class="status">incarico 3/12</span></div>
+      <div class="cinghiale"><span class="name">Tristan</span><span class="status">incarico 4/12</span></div>
+      <div class="cinghiale"><span class="name">Brice</span><span class="status">incarico 5/12</span></div>
+      <div class="cinghiale"><span class="name">Wynstan</span><span class="status">incarico 6/12</span></div>
+      <div class="cinghiale"><span class="name">Conrad</span><span class="status">incarico 7/12</span></div>
+      <div class="cinghiale"><span class="name">Alec</span><span class="status">incarico 8/12</span></div>
+      <div class="cinghiale"><span class="name">Devan</span><span class="status">incarico 9/12</span></div>
+      <div class="cinghiale"><span class="name">Evelyn</span><span class="status">incarico 10/12</span></div>
+      <div class="cinghiale"><span class="name">Pierre</span><span class="status">incarico 11/12</span></div>
+      <div class="cinghiale"><span class="name">Ronald (II)</span><span class="status">incarico 12/12</span></div>
     </div>
   </div>
 </section>
 
-<section class="welcome" style="padding-top:0;">
+<section class="mongolfiere">
   <div class="container">
-    <h2 style="margin-bottom:2rem;">Sul tavolo adesso</h2>
-    <a href="/giochi/crimson-desert.html" style="display:block;text-decoration:none;color:var(--parchment);max-width:900px;margin:0 auto;">
-      <div style="position:relative;height:340px;border:1px solid rgba(176,138,63,0.3);overflow:hidden;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold-bright)';this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 40px rgba(0,0,0,0.6)';" onmouseout="this.style.borderColor='rgba(176,138,63,0.3)';this.style.transform='translateY(0)';this.style.boxShadow='none';">
-        <div style="position:absolute;inset:0;background-image:url('assets/games/crimson-screens/accampamento.png');background-size:cover;background-position:center;filter:brightness(0.55) contrast(1.1);"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(15,8,3,0.95) 0%, rgba(15,8,3,0.3) 50%, transparent 100%);"></div>
-        <div style="position:absolute;bottom:0;padding:2rem;z-index:2;">
-          <span style="display:inline-block;padding:0.3rem 0.8rem;background:var(--ember);color:var(--parchment);font-family:'Cinzel',serif;font-size:0.8rem;letter-spacing:0.1em;margin-bottom:0.7rem;text-transform:uppercase;">In corso · Capitolo V</span>
-          <h3 style="font-family:'Cinzel',serif;font-size:2.2rem;color:var(--candle-bright);margin-bottom:0.5rem;">Crimson Desert</h3>
-          <p style="color:var(--parchment-warm);font-style:italic;max-width:600px;">Re Kliff regna a Pywel da 5 capitoli. 12 Cinghiali reclutati, 3 mongolfiere, una nido di Arpie da affrontare. <span style="color:var(--candle-bright);">Apri il diario →</span></p>
-        </div>
-      </div>
-    </a>
+    <div class="image" role="img" aria-label="I tre Carronuvola sopra l'accampamento"></div>
+    <div>
+      <h2>Le 3 Mongolfiere</h2>
+      <p style="color:var(--parchment);line-height:1.7;">Nel cortile della Collina Ululante galleggiano tre <strong>Carronuvola</strong>. Non e' una mongolfiera qualsiasi: e' fast-travel aereo del nord di Hernand, e Re Kliff ne ha collezionate tre di quattro varianti possibili.</p>
+      <ul>
+        <li><strong>Carronuvola della Via del cielo</strong><span>la principale, ricarica 2h, galleggia sopra l'accampamento come un occhio blu e oro</span></li>
+        <li><strong>Carronuvola standard</strong><span>backup veloce, ricarica 1h</span></li>
+        <li><strong>Carronuvola della Via delle...</strong><span>terza variante, nome troncato negli appunti di Roan</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="house-strip">
+  <div class="container">
+    <h2>La taverna che si racconta</h2>
+    <p>Questa e' una taverna online. Un posto dove l'oste apre il fuoco al tramonto, mette una birra sul tavolo, e gioca a videogiochi senza pretese di vincere. Si gioca lento. Si parla in italiano. Si tiene aperto a chiunque entri.</p>
+    <p class="quote">"Subs sono Cinghiali Onorari. Donatori muovono le storie del gioco. La community non e' un'arena, e' un focolare."</p>
+    <p><a href="/la-taverna.html" style="color:var(--candle-bright);">Chi vive qui dentro →</a></p>
   </div>
 </section>
 
 <section class="schedule-strip">
   <div class="container">
-    <h2>Quando si apre</h2>
-    <ul class="schedule-grid">
-      <li><strong>Mar</strong><br>20:30 - 01:00</li>
-      <li><strong>Gio</strong><br>20:30 - 01:30</li>
-      <li><strong>Sab</strong><br>15:00 - 21:00</li>
-      <li><strong>Dom</strong><br>21:00 - 01:00</li>
-    </ul>
-    <p class="tz">Orari Centro Europa (CET/CEST). Cambi annunciati su Discord.</p>
+  <h2>Quando si apre</h2>
+  <ul class="schedule-grid">
+  <li><strong>Mar</strong><br>20:30 - 01:00</li>
+  <li><strong>Gio</strong><br>20:30 - 01:30</li>
+  <li><strong>Sab</strong><br>15:00 - 21:00</li>
+  <li><strong>Dom</strong><br>21:00 - 01:00</li>
+  </ul>
+  <p class="tz">Orari Centro Europa (CET/CEST).</p>
   </div>
 </section>
 
 <footer>
   <div class="container footer-grid">
-    <div>
-      <h4>La Taverna</h4>
-      <p>Una taverna online dove si gioca senza fretta.<br>
-      Oste: Kevin · Custode: Roan</p>
-    </div>
-    <div>
-      <h4>Dove trovarci</h4>
-      <ul>
-        <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank" rel="noopener">Twitch</a></li>
-        <li><span style="color:var(--parchment-warm);opacity:0.5;">Discord (in arrivo)</span></li>
-        <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank" rel="noopener">TikTok</a></li>
-        <li><span style="color:var(--parchment-warm);opacity:0.5;">YouTube (in arrivo)</span></li>
-        <li><span style="color:var(--parchment-warm);opacity:0.5;">X / Twitter (in arrivo)</span></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Il custode AI</h4>
-      <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="/roan.html">Scopri chi e'</a>.</p>
-    </div>
+  <div>
+  <h4>La Taverna</h4>
+  <p>Una taverna online dove si gioca senza fretta.<br>
+  Oste: Kevin · Custode: Roan</p>
+  </div>
+  <div>
+  <h4>Dove trovarci</h4>
+  <ul>
+  <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank" rel="noopener">Twitch</a></li>
+  <li><span style="color:var(--parchment-warm);opacity:0.5;">Discord (in arrivo)</span></li>
+  <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank" rel="noopener">TikTok</a></li>
+  <li><span style="color:var(--parchment-warm);opacity:0.5;">YouTube (in arrivo)</span></li>
+  <li><span style="color:var(--parchment-warm);opacity:0.5;">X / Twitter (in arrivo)</span></li>
+  </ul>
+  </div>
+  <div>
+  <h4>Il custode AI</h4>
+  <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="/roan.html">Scopri chi e'</a>.</p>
+  </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
   </div>
 </footer>
 
