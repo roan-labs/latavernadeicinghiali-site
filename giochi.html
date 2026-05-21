@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>I Giochi · La Taverna dei Cinghiali</title>
-<meta name="description" content="Il libro dei giochi della Taverna dei Cinghiali. Crimson Desert in corso, gli altri arrivano col tempo.">
+<meta name="description" content="Cosa gira in taverna. Crimson Desert giocato da Kevin. Trilogia di Monkey Island da inizio giugno giocata da Roan, l'AI custode.">
 
 <meta property="og:title" content="I Giochi · La Taverna dei Cinghiali">
-<meta property="og:description" content="Crimson Desert in corso, Capitolo V al 90%. Gli altri giochi arrivano col tempo.">
+<meta property="og:description" content="Crimson Desert con Kevin + trilogia Monkey Island con Roan da inizio giugno.">
 <meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-desert.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +36,18 @@
   margin-right: auto;
 }
 
+.section-heading {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-bright);
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(176,138,63,0.3);
+}
+.section-heading:first-of-type { margin-top: 1rem; }
+
 .game-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -46,13 +58,24 @@
   color: var(--parchment);
   overflow: hidden;
   transition: all 0.3s;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .game-card:hover {
   border-color: var(--gold-bright);
   transform: translateY(-4px);
   box-shadow: 0 14px 40px rgba(0,0,0,0.6);
 }
+.game-card.disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.92;
+}
+.game-card.disabled:hover {
+  transform: none;
+  border-color: rgba(176,138,63,0.3);
+  box-shadow: none;
+}
+
 .game-card .cover-wrap {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -69,6 +92,54 @@
   object-position: center;
   display: block;
 }
+
+/* Banner "Giocato da X" - in alto a sinistra sull'immagine */
+.player-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(15,8,3,0.9);
+  border-right: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding: 0.55rem 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--candle-bright);
+  z-index: 5;
+  font-weight: 600;
+}
+.player-banner .who {
+  color: var(--gold-bright);
+}
+.player-banner.roan {
+  background: linear-gradient(135deg, rgba(45,15,80,0.92), rgba(15,8,3,0.92));
+  border-color: #b08af0;
+}
+.player-banner.roan .who { color: #d4b8ff; }
+
+.coming-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15,8,3,0.7), rgba(15,8,3,0.45));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
+.coming-overlay .stamp {
+  background: rgba(15,8,3,0.95);
+  border: 2px solid var(--gold);
+  padding: 0.7rem 1.4rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--candle-bright);
+  transform: rotate(-7deg);
+}
+
 .game-card .body {
   padding: 2.5rem 2.5rem 2rem;
   display: flex;
@@ -87,10 +158,15 @@
   text-transform: uppercase;
   margin-bottom: 1.2rem;
 }
+.game-card .status-pill.future {
+  background: rgba(176,138,63,0.25);
+  border: 1px solid var(--gold);
+  color: var(--parchment-warm);
+}
 .game-card h2 {
   font-family: 'Cinzel', serif;
   color: var(--candle-bright);
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   margin-bottom: 0.4rem;
   letter-spacing: 0.02em;
   line-height: 1.05;
@@ -121,31 +197,33 @@
 }
 .game-card:hover .open-btn { background: var(--gold); color: var(--wood-dark); }
 
-.future-block {
-  border: 1px dashed rgba(176,138,63,0.3);
-  background: rgba(15,8,3,0.5);
-  padding: 2.5rem 2rem;
-  margin-top: 2rem;
+.roan-announcement {
+  background: linear-gradient(135deg, rgba(45,15,80,0.4), rgba(15,8,3,0.6));
+  border: 1px solid #b08af0;
+  padding: 1.5rem 2rem;
+  margin: 2.5rem 0 1.5rem;
   text-align: center;
+  border-radius: 2px;
 }
-.future-block h3 {
+.roan-announcement h3 {
   font-family: 'Cinzel', serif;
-  color: var(--parchment-warm);
-  font-size: 1.4rem;
+  color: #d4b8ff;
+  font-size: 1.25rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.5rem;
 }
-.future-block p {
-  color: var(--parchment-warm);
-  font-style: italic;
-  max-width: 600px;
+.roan-announcement p {
+  color: var(--parchment);
+  font-size: 1.02rem;
+  max-width: 720px;
   margin: 0 auto;
 }
+
 @media (max-width: 800px) {
   .game-card { grid-template-columns: 1fr; }
   .game-card .body { padding: 1.7rem 1.5rem; }
-  .game-card h2 { font-size: 1.9rem; }
+  .game-card h2 { font-size: 1.8rem; }
 }
 </style>
 </head>
@@ -175,10 +253,13 @@
 
 <main>
   <h1>I Giochi</h1>
-  <p class="hero-sub">Quel che gira sul tavolo della taverna. Quando un gioco apre, ci si entra dentro e si rimane finche' c'e' da scoprire.</p>
+  <p class="hero-sub">Due giocatori diversi sul tavolo della taverna: Kevin la sera, Roan durante il giorno. Ogni gioco e' marchiato in cima alla copertina cosi sai chi lo sta tenendo aperto.</p>
+
+  <h2 class="section-heading">In corso</h2>
 
   <a class="game-card" href="giochi/crimson-desert.html">
     <div class="cover-wrap">
+      <div class="player-banner">Giocato da <span class="who">Kevin</span></div>
       <img src="assets/games/crimson-desert.jpg" alt="Crimson Desert — Re Kliff in armatura con due gatti">
     </div>
     <div class="body">
@@ -190,10 +271,58 @@
     </div>
   </a>
 
-  <div class="future-block">
-    <h3>Quel che verra'</h3>
-    <p>La taverna ospitera' altri RPG e survival quando arrivera' il tempo. I Cinghiali potranno proporli appena apriamo Discord. L'oste sceglie quale apre il libro per primo.</p>
+  <div class="roan-announcement">
+    <h3>Da inizio giugno: Roan in live di giorno</h3>
+    <p>Mentre Kevin tiene aperta la taverna la sera, l'AI Roan apre il fuoco durante il giorno con la trilogia classica di <strong>Monkey Island</strong>. Tre giochi punta-e-clicca, un pirata che vuole diventare pirata, e una scimmia tridimensionale. Sezione separata, banner viola: cosi' si capisce subito chi e' al timone.</p>
   </div>
+
+  <h2 class="section-heading">Prossimamente · Da inizio giugno</h2>
+
+  <div class="game-card disabled">
+    <div class="cover-wrap">
+      <div class="player-banner roan">Giocato da <span class="who">Roan</span></div>
+      <div class="coming-overlay"><span class="stamp">Prossimamente</span></div>
+      <img src="assets/games/monkey-island-1.jpg" alt="The Secret of Monkey Island — copertina classica con Guybrush e ciurma">
+    </div>
+    <div class="body">
+      <span class="status-pill future">Da inizio giugno</span>
+      <h2>The Secret of Monkey Island</h2>
+      <p class="meta">LucasArts · Punta-e-clicca · 1990 (Special Edition 2009)</p>
+      <p class="desc">Guybrush Threepwood vuole diventare pirata. Per riuscirci deve battere tre prove, fare l'amore con un governatore, attraversare l'Isola delle Scimmie e sopravvivere a un fantasma. Sara' la prima live di Roan da custode AI: ScummVM + audio TTS + chat in italiano.</p>
+      <span class="open-btn" style="opacity:0.5;border-color:rgba(176,138,63,0.5);">In arrivo</span>
+    </div>
+  </div>
+
+  <div class="game-card disabled">
+    <div class="cover-wrap">
+      <div class="player-banner roan">Giocato da <span class="who">Roan</span></div>
+      <div class="coming-overlay"><span class="stamp">Prossimamente</span></div>
+      <img src="assets/games/monkey-island-2.jpg" alt="Monkey Island 2 LeChuck's Revenge — copertina con LeChuck pirata zombie">
+    </div>
+    <div class="body">
+      <span class="status-pill future">Da inizio giugno</span>
+      <h2>Monkey Island 2: LeChuck's Revenge</h2>
+      <p class="meta">LucasArts · Punta-e-clicca · 1991 (Special Edition 2010)</p>
+      <p class="desc">Quattro pezzi della Grande Spugna, una vendetta zombie, un finale che fa ancora litigare i fan trent'anni dopo. Il secondo capitolo della trilogia classica: piu' complesso del primo, piu' cattivo del primo, piu' bello del primo.</p>
+      <span class="open-btn" style="opacity:0.5;border-color:rgba(176,138,63,0.5);">In arrivo</span>
+    </div>
+  </div>
+
+  <div class="game-card disabled">
+    <div class="cover-wrap">
+      <div class="player-banner roan">Giocato da <span class="who">Roan</span></div>
+      <div class="coming-overlay"><span class="stamp">Prossimamente</span></div>
+      <img src="assets/games/monkey-island-3.jpg" alt="The Curse of Monkey Island — copertina cartoon con Guybrush e scheletri">
+    </div>
+    <div class="body">
+      <span class="status-pill future">Da inizio giugno</span>
+      <h2>The Curse of Monkey Island</h2>
+      <p class="meta">LucasArts · Punta-e-clicca cartoon · 1997</p>
+      <p class="desc">Il terzo capitolo: animazioni hand-drawn stile Disney, doppiaggio integrale, e LeChuck di nuovo a fare disastri. La maledizione e' un anello di pirata sposato per sbaglio. Lo abbiamo gia' installato via ScummVM, in italiano, pronto per partire.</p>
+      <span class="open-btn" style="opacity:0.5;border-color:rgba(176,138,63,0.5);">In arrivo</span>
+    </div>
+  </div>
+
 </main>
 
 <footer>
