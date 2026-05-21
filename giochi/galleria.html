@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galleria · Crimson Desert · La Taverna dei Cinghiali</title>
+<meta name="description" content="Dieci screenshot della save di Re Kliff: l'accampamento, l'equipaggiamento, la mappa, i compagni, la banca, il cavallo Herspia, le mongolfiere.">
+
+<meta property="og:title" content="Galleria · Crimson Desert">
+<meta property="og:description" content="Screenshot dalla save di Re Kliff: accampamento, equipaggiamento, mappa, mongolfiere, compagni.">
+<meta property="og:image" content="https://roan-labs.github.io/latavernadeicinghiali-site/assets/games/crimson-screens/accampamento.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' fill='%230f0803'/&gt;&lt;text x='50%' y='62%' text-anchor='middle' font-family='Georgia,serif' font-size='22' fill='%23f5b952'&gt;T&lt;/text&gt;&lt;/svg&gt;">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.gallery-page main { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem 4rem; }
+.gallery-page h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--gold-bright);
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
+.gallery-page .hero-sub {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--candle-bright);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.gallery-page .breadcrumb {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  margin-bottom: 2.5rem;
+}
+.gallery-page .breadcrumb a { color: var(--candle-bright); text-decoration: none; }
+
+.submenu-bar {
+  background: rgba(20,10,4,0.92);
+  border-top: 1px solid rgba(176,138,63,0.25);
+  border-bottom: 1px solid rgba(176,138,63,0.25);
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+}
+.submenu-bar nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.submenu-bar nav a {
+  color: var(--parchment-warm);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-right: 1px solid rgba(176,138,63,0.2);
+  transition: color 0.2s;
+}
+.submenu-bar nav a:last-child { border-right: none; }
+.submenu-bar nav a:hover { color: var(--candle-bright); }
+.submenu-bar nav a.active { color: var(--gold-bright); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+.gallery-item {
+  cursor: pointer;
+  background: rgba(15,8,3,0.6);
+  border: 1px solid rgba(176,138,63,0.25);
+  overflow: hidden;
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.gallery-item:hover {
+  border-color: var(--gold-bright);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.gallery-item .thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.gallery-item .caption {
+  padding: 0.9rem 1rem 1rem;
+}
+.gallery-item .caption .title {
+  font-family: 'Cinzel', serif;
+  color: var(--candle-bright);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+.gallery-item .caption .note {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  font-size: 0.82rem;
+  display: block;
+  line-height: 1.4;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+.lightbox.open { display: flex; flex-direction: column; }
+.lightbox img {
+  max-width: 95vw;
+  max-height: 80vh;
+  border: 1px solid rgba(176,138,63,0.4);
+  box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+.lightbox .caption {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  color: var(--parchment-warm);
+  max-width: 700px;
+  font-size: 1rem;
+}
+.lightbox .close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(15,8,3,0.85);
+  border: 1px solid var(--gold);
+  color: var(--parchment);
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 0;
+}
+.lightbox .close:hover { background: var(--gold); color: var(--wood-dark); }
+.lightbox .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(15,8,3,0.7);
+  border: 1px solid var(--gold);
+  color: var(--candle-bright);
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.lightbox .nav-btn:hover { background: var(--gold); color: var(--wood-dark); }
+.lightbox .nav-btn.prev { left: 1.5rem; }
+.lightbox .nav-btn.next { right: 1.5rem; }
+</style>
+</head>
+<body class="inner-page gallery-page">
+
+<div class="bg-layers">
+  <div class="bg-wood"></div>
+  <div class="bg-vignette"></div>
+  <div class="bg-candle-flicker"></div>
+</div>
+
+<header class="top-nav">
+  <a href="../index.html" class="brand">
+  <span class="brand-text">La Taverna<br><em>dei Cinghiali</em></span>
+  </a>
+  <nav>
+    <a href="../la-taverna.html">La Taverna</a>
+    <a href="../giochi.html">Giochi</a>
+    <a href="../schedule.html">Quando</a>
+    <a href="../news.html">Notizie</a>
+    <a href="../roan.html">Roan</a>
+  </nav>
+  <div class="status" id="live-status">
+  <span class="dot offline"></span>
+  <span>Taverna chiusa</span>
+  </div>
+</header>
+
+<section class="submenu-bar">
+  <nav>
+    <a href="crimson-desert.html">La saga</a>
+    <a href="personaggio.html">Chi e' Re Kliff</a>
+    <a href="mantogrigio.html">I Mantogrigio</a>
+    <a href="equipaggiamento.html">Equipaggiamento</a>
+    <a href="situazione.html">Cronache di Pywel</a>
+    <a class="active" href="galleria.html">Galleria</a>
+  </nav>
+</section>
+
+<main>
+  <h1>Galleria</h1>
+  <p class="hero-sub">Dieci immagini dalla save di Re Kliff.<br>Click per ingrandire, frecce per scorrere.</p>
+  <p class="breadcrumb"><a href="../giochi.html">Giochi</a> · <a href="crimson-desert.html">Crimson Desert</a> · Galleria</p>
+
+  <div class="gallery-grid" id="gallery">
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/accampamento.png" data-title="L'accampamento sulla Collina Ululante" data-note="Il Carronuvola blu e oro galleggia sopra la baracca dei Mantogrigio. Sera, fuoco acceso.">
+      <img class="thumb" src="../assets/games/crimson-screens/accampamento.png" alt="L'accampamento sulla Collina Ululante">
+      <div class="caption"><span class="title">L'accampamento</span><span class="note">La Collina Ululante dopo che Kliff l'ha rimessa in piedi.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/quest-log.png" data-title="Il diario delle quest principali" data-note="Cinque capitoli col timbro verde, il sesto al 90%. Si chiude col nido delle Arpie.">
+      <img class="thumb" src="../assets/games/crimson-screens/quest-log.png" alt="Diario delle quest">
+      <div class="caption"><span class="title">Il diario delle quest</span><span class="note">Cinque capitoli chiusi, il sesto al 90%.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/scheda-pg.png" data-title="La scheda del personaggio" data-note="Salute 525, Energia 220, Spirito 50. L'Armatura di Bolton e tutto il set Canta in piastra.">
+      <img class="thumb" src="../assets/games/crimson-screens/scheda-pg.png" alt="Scheda personaggio Kliff">
+      <div class="caption"><span class="title">La scheda di Re Kliff</span><span class="note">Stats, armatura, equipaggiamento completo.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/spada-del-lord.png" data-title="La Spada del Lord" data-note="Atk 15, affilatura 100/100, bonus 'Fendente del vento'. Mai stata cambiata dal Capitolo III.">
+      <img class="thumb" src="../assets/games/crimson-screens/spada-del-lord.png" alt="Spada del Lord">
+      <div class="caption"><span class="title">La Spada del Lord</span><span class="note">Atk 15, affilata cento su cento.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/carronuvola.png" data-title="I tre Carronuvola" data-note="La principale 'della Via del cielo' ha 2h di ricarica. Galleggia sopra l'accampamento.">
+      <img class="thumb" src="../assets/games/crimson-screens/carronuvola.png" alt="I tre Carronuvola">
+      <div class="caption"><span class="title">Le tre mongolfiere</span><span class="note">Fast-travel aereo, blu e oro.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/compagni-mantogrigio.png" data-title="I compagni Mantogrigio" data-note="I dodici Cinghiali superstiti che Kliff ha richiamato uno per uno. Tutti con incarico chiuso.">
+      <img class="thumb" src="../assets/games/crimson-screens/compagni-mantogrigio.png" alt="Compagni Mantogrigio">
+      <div class="caption"><span class="title">I 12 Cinghiali</span><span class="note">Tutti reclutati. Tutti incarichi chiusi.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/casata-celeste-fuorilegge.png" data-title="Casata Celeste, fuorilegge ricercati" data-note="Sette dei nove abbattuti. Restano Salvatore e uno fra Jeffrey, Simon, Alessio, Blix.">
+      <img class="thumb" src="../assets/games/crimson-screens/casata-celeste-fuorilegge.png" alt="Casata Celeste taglie">
+      <div class="caption"><span class="title">Il libro delle taglie</span><span class="note">7/9 fuorilegge della Casata Celeste a terra.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/banca-tesoro.png" data-title="La banca di Re Kliff" data-note="1000 silver depositati in 2 lingotti d'oro. Profilo Proattivo: il re finge di essere un investitore.">
+      <img class="thumb" src="../assets/games/crimson-screens/banca-tesoro.png" alt="Banca tesoro">
+      <div class="caption"><span class="title">Il tesoro</span><span class="note">1.000 silver in banca, profilo Proattivo.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/mappa-esplorata.png" data-title="La mappa scoperta" data-note="48 regioni su 110. Hernand, Demeniss, Delesyia, Pailune, Crimson Desert visibile in lontananza.">
+      <img class="thumb" src="../assets/games/crimson-screens/mappa-esplorata.png" alt="Mappa esplorata">
+      <div class="caption"><span class="title">La mappa</span><span class="note">48/110 regioni note, il 79% del mondo non aperto.</span></div>
+    </div>
+
+    <div class="gallery-item" data-img="../assets/games/crimson-screens/cavallo-herspia.png" data-title="Herspia, la cavalla" data-note="Fiducia Livello 5 su 5. L'unica relazione stabile della vita di Kliff.">
+      <img class="thumb" src="../assets/games/crimson-screens/cavallo-herspia.png" alt="Cavallo Herspia">
+      <div class="caption"><span class="title">Herspia</span><span class="note">Fiducia Liv 5. L'unica relazione stabile.</span></div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLB()">
+    <button class="close" onclick="closeLB()">X</button>
+    <button class="nav-btn prev" onclick="prevImg(event)">&lt;</button>
+    <button class="nav-btn next" onclick="nextImg(event)">&gt;</button>
+    <img id="lb-img" src="" alt="">
+    <div class="caption" id="lb-caption"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+  <div>
+  <h4>La Taverna</h4>
+  <p>Una taverna online dove si gioca senza fretta.<br>Oste: Kevin · Custode: Roan</p>
+  </div>
+  <div>
+  <h4>Dove trovarci</h4>
+  <ul>
+  <li><a href="https://twitch.tv/latavernadeicinghiali" target="_blank" rel="noopener">Twitch</a></li>
+  <li><a href="https://discord.gg/dKcGb4Y9h2" target="_blank" rel="noopener">Discord</a></li>
+  <li><a href="https://tiktok.com/@latavernadeicinghiali" target="_blank" rel="noopener">TikTok</a></li>
+  <li><a href="https://youtube.com/@latavernadeicinghiali" target="_blank" rel="noopener">YouTube</a></li>
+  </ul>
+  </div>
+  <div>
+  <h4>Il custode AI</h4>
+  <p>Questa taverna ha un custode AI che ne tiene la memoria. Si chiama Roan. <a href="../roan.html">Scopri chi e'</a>.</p>
+  </div>
+  </div>
+  <div class="footer-bottom">
+  <span>&copy; 2026 La Taverna dei Cinghiali · Made with cura by Kevin &amp; Roan</span>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script>
+(function(){
+  const items = Array.from(document.querySelectorAll('.gallery-item'));
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCap = document.getElementById('lb-caption');
+  let idx = 0;
+
+  function open(i) {
+    idx = i;
+    const it = items[i];
+    lbImg.src = it.dataset.img;
+    lbImg.alt = it.dataset.title;
+    lbCap.innerHTML = '<strong style="color:var(--candle-bright);font-family:Cinzel,serif;font-style:normal;display:block;margin-bottom:0.3rem;">' + it.dataset.title + '</strong>' + it.dataset.note;
+    lb.classList.add('open');
+  }
+  window.closeLB = function() { lb.classList.remove('open'); };
+  window.prevImg = function(e) { e && e.stopPropagation(); open((idx - 1 + items.length) % items.length); };
+  window.nextImg = function(e) { e && e.stopPropagation(); open((idx + 1) % items.length); };
+
+  items.forEach((it, i) => it.addEventListener('click', () => open(i)));
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') prevImg();
+    if (e.key === 'ArrowRight') nextImg();
+  });
+})();
+</script>
+</body>
+</html>
